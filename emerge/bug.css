@@ -1,0 +1,141 @@
+html {
+  background-color: transparent;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  align-items: center;
+  justify-content: space-evenly;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.window-handle {
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2em;
+  background-color: #0094ff;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-lr;
+} .window-handle::after {
+  -webkit-app-region: drag;
+  content: '⣿';
+  background-color: #ffffff2e;
+  padding: 4px 50px;
+  border-radius: 999em;
+  border: 1px solid #ffffff3b;
+}
+
+.square {
+  display: flex;
+  /*position: fixed;*/
+/*  bottom: 0;
+  right: 0;*/
+  width: 5vw;
+  height: 5vh;
+  background-color: white;
+  border: 5px solid black;
+/*  border-radius: 50%;*/
+  align-items: center;
+  justify-content: center;
+  font-family: arial;
+  cursor: pointer;
+  text-align: center;
+} .square:hover {
+  background-color: grey;
+  border-color: darkgrey;
+} .square:active {
+  background-color: black;
+  border-color: white;
+  color: white;
+}
+
+.state {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2em;
+  background-color: #2f6300;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: arial;
+} .state.ignoring {
+  background-color: black;
+}
+/*
+.image {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 40px;
+  cursor: pointer;
+} .image:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+} .image:active{
+  box-shadow: 0 0 2px 1px rgba(100, 140, 186, 0.5);
+}
+*/
+.playerTeam {
+
+  width:20%;
+  height:100%;
+  cursor: pointer;
+}
+.individual {
+
+  width:20%;
+  height:80px;
+  cursor: pointer;
+}
+
+.container {
+  /*position: fixed;*/
+ /*   width: 20px;
+  height: 20px;*/
+  cursor: pointer;
+  /*background-color: grey;*/
+}.container:hover .overlay {
+  opacity: 0.5;
+}
+
+.image {
+  
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+
+
+/*.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}*/
