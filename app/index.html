@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+
+    var static
+
+    (function() {
+    var x = new XMLHttpRequest();
+    x.onreadystatechange = function() { if (this.readyState == 4 && this.status == 200) {
+        static = JSON.parse(x.response);
+      }
+    }
+    x.open("POST", "http://app/json/full.json");
+    x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    x.send();
+  })();
+
+
+
+  var picks;
+  var chosen = new Object();
+  function readPicks() {
+  	var x = new XMLHttpRequest();
+  	x.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+      picks = JSON.parse(x.response);
+      Object.keys(picks.actions[0]).forEach(function(key) {
+        if (picks.actions[0][key].type == 'pick') chosen[picks.actions[0][key].actorCellId] = picks.actions[0][key].championId;
+      });
+      for (var i=0; i<10; i++)
+      Object.keys(chosen).forEach(function(key) {
+        var player = document.getElementById('player'+i);
+        if (typeof chosen[i] != 'undefined') {
+          var id = chosen[i];
+          player.innerHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/champion/'+static.champion.id[id].key+'.png">';
+        }
+      });
+      console.log(chosen);
+      }
+    }
+  	x.open("POST", "http://app/pick.php?"+Math.random());
+  	x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  	x.send();
+  };
+
+  setInterval(function(){ readPicks(); }, 1000);
+
+  </script>
+</head>
+<body>
+<div style="width:150px; display:inline-block;">
+<div id="player0"></div>
+<div id="player1"></div>
+<div id="player2"></div>
+<div id="player3"></div>
+<div id="player4"></div>
+</div>
+<div style="width:150px; display:inline-block;">
+<div id="player5"></div>
+<div id="player6"></div>
+<div id="player7"></div>
+<div id="player8"></div>
+<div id="player9"></div>
+</div>
+</body>

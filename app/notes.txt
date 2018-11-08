@@ -1,0 +1,4 @@
+curl -X GET --header 'Accept: application/json' --header 'Authorizaton: Basic cmlvdDpaQTh1aXB2RjlvYk5uYlFVUGxJZEFB' 'https://127.0.0.1:52322/lol-champ-select/v1/pickable-champions' -k
+
+
+curl -X GET --header 'Accept: application/json' --header 'Authorizaton: Basic cmlvdDpaSEx2SnMzdGtJY08zNW1DWHlJR1pn' 'https://127.0.0.1:54027/lol-champ-select/v1/pickable-champions' -k

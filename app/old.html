@@ -1,0 +1,30 @@
+Hello World
+const auth = btoa("[my username]:[my password]");
+var config = {headers:  {
+              'Authorization': 'Basic ' + auth,
+              "Origin": "http://[webapp name].azurewebsites.net/api/contacts",
+              "Access-Control-Request-Method": "GET",
+              "Access-Control-Request-Headers": "X-Custom-Header"
+              }
+};
+
+<script>
+
+
+  (function() {
+  	var x = new XMLHttpRequest();
+//  	var recent = document.getElementById('recent');
+  	x.onreadystatechange = function() { if (this.readyState == 4 && this.status == 200)
+//       recent.innerHTML = x.response;
+       console.log(x.response);
+     }
+  	x.open("POST", "https://127.0.0.1:54156/lol-champ-select/v1/session");
+  	x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    x.setRequestHeader("Authorization", "Basic " + btoa("riot:wgXJKvxcvz24EZ1CA_4bqg"));
+    x.setRequestHeader("Accept", "application/json");
+
+    console.log(x);
+  	x.send();
+  })();
+
+  </script>
