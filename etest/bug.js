@@ -19,8 +19,6 @@ fs.readFile(filepath, 'utf-8', (err, data) => {
 );
 
 
-
-
 function processFile() {
     var res = lockfile.split(":");
     port = res[2];
@@ -69,15 +67,18 @@ function readPicks() {
 //      console.log(x.response);
     picks = JSON.parse(x.response);
     Object.keys(picks.actions[0]).forEach(function(key) {
-      if (picks.actions[0][key].type == 'pick') chosen[picks.actions[0][key].actorCellId] = picks.actions[0][key].championId;
+      var pid = parseInt(key);
+      console.log(pid+ ' '+picks.actions[0][pid].type+' '+ picks.actions[0][pid].championId);
+//      var pid = key+1;
+      if (picks.actions[0][pid].type == 'pick') chosen[parseInt(picks.actions[0][pid].actorCellId)+1] = picks.actions[0][pid].championId;
     });
 //    Object.keys(chosen).forEach(function(key) {
-    for (var i=0; i<10; i++) {
+    for (var i=1; i<=10; i++) {
       var player = document.getElementById('player'+i);
       if (typeof chosen[i] != 'undefined') {
         var id = chosen[i];
-        console.log(i+' '+id);
-        if (id) player.innerHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/champion/'+static.champion.id[id].key+'.png">';
+//        console.log(i+' '+id);
+        if (id) player.innerHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/champion/'+static.champion.id[id].key+'.png" width="60" height="60">';
       } else {
         player.innerHTML = 'P'+i+' 404';
       }
