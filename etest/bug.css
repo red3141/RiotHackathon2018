@@ -1,0 +1,28 @@
+html {
+  background-color: transparent;
+}
+
+body {
+
+}
+
+.window-handle {
+  display: flex;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2em;
+  background-color: #0094ff;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  writing-mode: vertical-lr;
+} .window-handle::after {
+  -webkit-app-region: drag;
+  content: '⣿';
+  background-color: #ffffff2e;
+  padding: 4px 50px;
+  border-radius: 999em;
+  border: 1px solid #ffffff3b;
+}
