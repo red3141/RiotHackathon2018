@@ -7,11 +7,22 @@ var fs = require('fs');
 var port;
 var password;
 var lockfile;
-var filepath = "/Applications/League of Legends.app/Contents/LoL/lockfile";
+var filepath = "C:/Riot Games/League of Legends/lockfile";
+
 fs.readFile(filepath, 'utf-8', (err, data) => {
     if(err){
-        alert("An error ocurred reading the file :" + err.message);
-        return;
+      console.log("Windows Path Error :" + err.message);
+      var filepath = "/Applications/League of Legends.app/Contents/LoL/lockfile";
+      fs.readFile(filepath, 'utf-8', (err, data) => {
+          if(err){
+              console.log("Mac Path Error :" + err.message);
+              return;
+          }
+          lockfile = data;
+          processFile();
+        }
+      );
+      return;
     }
     lockfile = data;
     processFile();
@@ -23,24 +34,6 @@ function processFile() {
     var res = lockfile.split(":");
     port = res[2];
     password = res[3];
-/*
-    (function() {
-     	var x = new XMLHttpRequest();
-   //  	var recent = document.getElementById('recent');
-     	x.onreadystatechange = function() { if (this.readyState == 4 && this.status == 200)
-   //       recent.innerHTML = x.response;
-           console.log('request');
-          console.log(x.response);
-        }
-     	x.open("GET", "https://127.0.0.1:"+port+"/lol-champ-select/v1/session");
-     	x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-       x.setRequestHeader("Authorization", "Basic " + btoa("riot:"+password));
-       x.setRequestHeader("Accept", "application/json");
-       console.log('requeststart');
- //      console.log(x);
-     	x.send();
-     })();
-*/
 }
 
 var static;
@@ -64,13 +57,13 @@ function readPicks() {
   var x = new XMLHttpRequest();
   x.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-//      console.log(x.response);
     picks = JSON.parse(x.response);
-    Object.keys(picks.actions[0]).forEach(function(key) {
-      var pid = parseInt(key);
-      console.log(pid+ ' '+picks.actions[0][pid].type+' '+ picks.actions[0][pid].championId);
+    Object.keys(picks.actions).forEach(function(x) {
+      Object.keys(picks.actions[x]).forEach(function(y) {
+      console.log(x+' '+y+ ' '+picks.actions[x][y].type+' '+ picks.actions[x][y].championId);
 //      var pid = key+1;
-      if (picks.actions[0][pid].type == 'pick') chosen[parseInt(picks.actions[0][pid].actorCellId)+1] = picks.actions[0][pid].championId;
+      if (picks.actions[x][y].type == 'pick') chosen[parseInt(picks.actions[x][y].actorCellId)+1] = picks.actions[x][y].championId;
+      });
     });
 //    Object.keys(chosen).forEach(function(key) {
     for (var i=1; i<=10; i++) {
