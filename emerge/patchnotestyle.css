@@ -1,0 +1,483 @@
+<style>
+.item {
+  display: block;
+  padding-bottom: 5px;
+}
+
+#patch-notes-container {
+ max-width: 250px; 
+}
+
+#patch-notes-container blockquote.blockquote.context:after {
+    margin-left: 0;
+}
+
+#patch-notes-container blockquote.blockquote.context {
+    font-size: 1em;
+    border: none;
+    padding: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-family: "Gill Sans W04",GillSans,"Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif;
+}
+
+#patch-notes-container #cboxTitle {
+    color:white;
+}
+
+#patch-notes-container .patch-change-block{
+    padding-left: 104px;
+    background-repeat: no-repeat;
+    background-size: 64px auto;
+    background-position: 20px 20px;
+}
+
+#patch-notes-container .change-title {
+    padding-top: 0px;
+    margin-top: 0px;
+    font-size: 2em;
+}
+
+#patch-notes-container .skin-title {
+    font-size: 1.3em;
+    text-align: center;
+}
+#patch-notes-container .skin-box {
+    margin-bottom: 10px;
+}
+
+#patch-notes-container .change-detail-title {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+#patch-notes-container .sub-section-title {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #043A5C;
+}
+
+#patch-notes-container .reference-link{
+    display: block;
+    position: absolute;
+    width: 104px;
+    height: auto;
+    padding: 20px;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+}
+
+#patch-notes-container .context-designer {
+    display: block;
+    color: #940000;
+    font-style: normal;
+    text-align: right;
+}
+
+#patch-notes-container .context-designer img {
+    margin-right: 3px;
+    height: 24px;
+    vertical-align: top;
+}
+
+#patch-notes-container .summary, #patch-notes-container .disclaimer{
+    color: #777;
+    font-style: italic;
+    margin-bottom: 15px;
+    margin-top: 0px;
+}
+
+#patch-notes-container .attribute-change{
+    padding: 3px 0 3px 42px;
+}
+
+#patch-notes-container .attribute{
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .65em;
+}
+
+#patch-notes-container .attribute:after {
+    content : " : ";
+}
+
+#patch-notes-container .new {
+    /*background-color: #B6AA80;*/
+    background-color: #91A85F;
+    color: #eee;
+    /*font-weight: bold;*/
+    border-radius: 4px;
+}
+
+#patch-notes-container .updated {
+    background-color:#5e3dc6;
+    color:#f8f8f8;
+    border-radius:4px;
+}
+
+#patch-notes-container .new.float-left, #patch-notes-container .removed.float-left, #patch-notes-container .updated.float-left {
+    float: left;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    vertical-align: top;
+    font-family: "Gill Sans W04",GillSans,"Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif;
+    margin-right: 3px;
+    line-height: 1.0em;
+    padding: 6px;
+    border-radius: 8px;
+}
+
+#patch-notes-container .new, #patch-notes-container .updated {
+    margin-right: 3px;
+    padding: 3px 4px;
+}
+
+#patch-notes-container .new, #patch-notes-container .updated {
+    margin-right: 3px;
+    padding: 3px 4px;
+    font-family: "Gill Sans W04",GillSans,"Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif;
+    vertical-align: middle;
+    font-size: 0.7em;
+    text-transform: uppercase;
+}
+
+#patch-notes-container .removed {
+    background-color: #A05757;
+    color: #eee;
+    /*font-weight: bold;*/
+    border-radius: 4px;
+}
+#patch-notes-container .removed {
+    margin-right: 3px;
+    padding: 3px 4px;
+}
+
+#patch-notes-container .removed, #patch-notes-container .updated {
+    padding: 3px 4px;
+    font-size: 0.6em;
+    text-transform: uppercase;
+    vertical-align: middle;
+    font-family: "Gill Sans W04",GillSans,"Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif;
+    margin-right: 3px;
+}
+
+#patch-notes-container .removed {
+    margin-right: 3px;
+    padding: 3px 4px;
+    font-family: "Gill Sans W04",GillSans,"Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif;
+    vertical-align: middle;
+    font-size: 0.7em;
+    text-transform: uppercase;
+}
+
+#patch-notes-container .change-indicator{
+    color: #888;
+}
+
+#patch-notes-container .attribute-before, #patch-notes-container .attribute-removed{
+    color: #999;
+}
+
+#patch-notes-container .attribute-before {
+    text-decoration: line-through;
+}
+
+#patch-notes-container a{
+    display: block;
+    padding-left: 0;
+    line-height: 32px;
+}
+
+#patch-notes-container img{
+    height: 32px;
+    width: auto;
+    padding-right: 10px;
+}
+
+#patch-notes-container .divider{
+    margin: 10px 0;
+}
+
+#patch-notes-container .divider:first-of-type {
+    display: none;
+}
+
+#patch-notes-container .header-primary.image-header{
+    margin-top: 115px;
+    margin-bottom: 15px;
+    padding-top: 7px;
+}
+
+#patch-notes-container .heading-image{
+    width: 100%;
+    height: 100px;
+    position: absolute;
+    top: -100px;
+    left: 0;
+}
+
+#patch-notes-container .modes-sr{
+    background-image: url('https://news-a.akamaihd.net/public/styles/patch-notes/img/map-banner-sr.jpg');
+    background-position: 50%;
+    background-size: 100% auto;
+}
+
+#patch-notes-container .modes-tt{
+    background-image: url('https://news-a.akamaihd.net/public/styles/patch-notes/img/map-banner-tt.jpg');
+    background-position: 50%;
+    background-size: 100% auto;
+}
+
+#patch-notes-container .modes-ha{
+    background-image: url('https://news-a.akamaihd.net/public/styles/patch-notes/img/map-banner-ha.jpg');
+    background-position: 50%;
+    background-size: 100% auto;
+}
+
+#patch-notes-container .modes-cs{
+    background-image: url('https://news-a.akamaihd.net/public/styles/patch-notes/img/map-banner-cs.jpg');
+    background-position: 50%;
+    background-size: 100% auto;
+}
+
+#patch-notes-container .modes-tt-cs{
+    background-image: url('https://news-a.akamaihd.net/public/styles/patch-notes/img/map-banner-tt-cs.jpg');
+    background-position: 50%;
+    background-size: 100% auto;
+}
+
+#patch-notes-container .modes-tt-cs-ha{
+    background-image: url('https://news-a.akamaihd.net/public/styles/patch-notes/img/map-banner-tt-cs-ha.jpg');
+    background-position: 50%;
+    background-size: 100% auto;
+}
+#patch-notes-container .modes-sr-tt{
+    background-image: url('https://news-a.akamaihd.net/public/styles/patch-notes/img/map-banner-sr-tt.jpg');
+    background-position: 50%;
+    background-size: 100% auto;
+}
+
+#patch-notes-container ul.arrow-bullets {
+    list-style-image : url("https://news-a.akamaihd.net/public/styles/patch-notes/img/bullet.png");
+    padding          : 0 0 0 16px;
+    margin           : 10px 0;
+}
+
+#patch-notes-container {
+  position:relative;
+}
+
+#patch-notes-container .context-designers {
+    float:right;
+    padding-bottom:15px;
+}
+
+#patch-notes-container .context-designer {
+    margin:0;
+    text-align:left;
+    padding:3px 0;
+}
+
+#patch-notes-container .header-primary {
+    clear:both;
+    overflow-wrap: break-word;
+}
+
+#patch-notes-container ul.patch-list-champ {
+    margin-left:20px;
+}
+
+#patch-notes-container div.attribute-change {
+    padding:0px 0px;
+}
+
+#patch-notes-container ul.patch-list {
+    margin-left:40px;
+    margin-top:0px;
+}
+
+#patch-notes-container .header-client-update {
+    background-image: url('https://news-a.akamaihd.net/public/images/articles/2016/november/pn622/Open_Beta_Header_930x160.jpg');
+    background-position: 50%;
+    background-size: 100% auto;
+}
+
+#patch-notes-container .header-honor {
+    background-image: url('https://news-a.akamaihd.net/public/styles/patch-notes/img/honor_banner.jpg');
+    background-position: 50%;
+    background-size: 100% auto;
+}
+
+#patch-notes-container .riot-tabs-header {
+    background: #d7d7d7;
+}
+
+#patch-notes-container .riot-tabs-header.active {
+    background: #e2e3e5;
+}
+
+#patch-notes-container .riot-tabs-header:hover {
+    background: #e2e3e5;
+}
+
+#patch-notes-container ul {
+    list-style:initial;
+    padding-left:1.8em;
+}
+
+/* Responsive mobile edits */
+@media(max-width: 569px) {
+    #patch-notes-container .skin-box {
+        width: 100%;
+    }
+}
+@media (max-width: 768px) {
+    #patch-notes-container .inline-left {
+        float: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    #patch-notes-container .patch-change-block {
+        padding: 15px;
+    }
+    #patch-notes-container .reference-link {
+        float: left;
+        position: initial;
+        width: 84px;
+        margin-bottom: 5px;
+        padding: 0;
+        overflow-wrap: break-word;
+    }
+}
+@media (max-width: 768px) {
+  #patch-notes-container blockquote.blockquote.context {
+    margin: 15px 0 20px;
+    position: relative;
+    text-indent: 30px;
+  }
+
+  #patch-notes-container blockquote.blockquote.context:before,
+  #patch-notes-container blockquote.blockquote.context:after {
+    font-size: 40px;
+  }
+
+  #patch-notes-container blockquote.blockquote.context:before {
+    left: 0;
+    top: 0;
+  }
+
+  #patch-notes-container blockquote.blockquote.context:after {
+    margin: -3px 0 0 -25px;
+  }
+
+  #patch-notes-container  br {
+    content: '';
+    display: block;
+    margin: 1em 0 0;
+  }
+
+  #patch-notes-container .context-designers {
+    float: none;
+    padding: 0;
+  }
+
+  #patch-notes-container .attribute-change {
+    padding: 5px 0 0 10px;
+  }
+
+  #patch-notes-container .attribute {
+    margin-left : -10px;
+  }
+
+  #patch-notes-container .new,
+  #patch-notes-container .updated,
+  #patch-notes-container .removed {
+    margin-right: 5px;
+    padding: 4px 4px 1px;
+  }
+
+  #patch-notes-containern .reference-link {
+    margin-bottom: 20px;
+    width: 79px;
+  }
+
+  #patch-notes-container h3.change-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    min-height: 64px;
+  }
+
+  #patch-notes-container .ability-title {
+    margin-bottom: 5px;
+    min-height: 32px;
+    padding-left: 42px;
+    position: relative;
+  }
+
+  #patch-notes-container .ability-title img {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  #patch-notes-container ul {
+    margin: 1em 0;
+    padding-left: 25px;
+  }
+
+  #patch-notes-container ul li {
+    margin-top: 5px;
+  }
+
+  #patch-notes-container .new,
+  #patch-notes-container .updated {
+    margin-right: 5px;
+    padding: 4px 4px 0;
+  }
+
+  #patch-notes-container .summary {
+    margin: 1em 0;
+  }
+
+  #patch-notes-container .new.float-left,
+  #patch-notes-container .updated.float-left,
+  #patch-notes-container .removed.float-left {
+    font-size: 14px;
+    margin: 3px 5px 5px 0;
+    padding: 5px 6px 0;
+  }
+
+  #patch-notes-container .inline-blockquote.inline-left {
+    float: none;
+  }
+
+  #patch-notes-container .riot-tabs-header-container {
+    margin-top: -5px;
+  }
+
+  #patch-notes-container .riot-tabs-header {
+    margin-top: 5px
+  }
+  
+  #patch-notes-container .attribute {
+        padding-top: 10px;
+    display: block;
+  }
+  
+ #patch-notes-container  span.attribute-after {
+    display: block;
+    margin-top: -5px;
+    padding-bottom: 10px;
+}
+}
+
+@media(max-width: 569px) {
+  #patch-notes-container .skin-box {
+    width: 100%;
+  }
+}
+
+</style>
