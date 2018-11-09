@@ -33,6 +33,7 @@ var password;
 var lockfile;
 var filepath = "C:/Riot Games/League of Legends/lockfile";
 var championData;
+var nameToIDData;
 
 fs.readFile(filepath, 'utf-8', (err, data) => {
     if(err){
@@ -60,6 +61,11 @@ fs.readFile('./PatchesByChamp.json', 'utf-8', (err, data) => {
 	}
 });
 
+fs.readFile('./nameToId.json', 'utf-8', (err, data) => {
+  if (!err) {
+    nameToIDData = JSON.parse(data);
+  }
+});
 
 function processFile() {
     var res = lockfile.split(":");
@@ -95,6 +101,25 @@ var counters;
   x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   x.send();
 })();
+
+var counterID = [];
+
+function findCounters(){
+  for (k = 0; k <=4; k ++){
+    if (!chosen[k]) {
+      continue;
+    }
+    for (i = 5; i <=9; i ++){
+      for (j = 0; j < 8; j ++){
+        if(chosen[i] == nameToIDData[counters[chosen[k]][j][0]]){
+          counterID.push(chosen[i]); 
+        }
+      }
+    }
+  }
+
+  console.log(counterID);
+}
 
 function getPatchNotesForChampionIdAndAbility(championId, ability) {
 	data = championData[championId];
@@ -146,6 +171,9 @@ function getTextForChangeType(changeType) {
 }
 
 var picks;
+//In a 5v5
+//0-4 player team
+//5-9 opponent team
 var chosen = new Object();
 function readPicks() {
 //  console.log(static);
@@ -269,6 +297,7 @@ function readPicks() {
 			  rHTML += rPatchNotes;
 		  }
 		  $(player).siblings('.r').find('.popup').html(rHTML);
+      findCounters();
           
 
 if (this.readyState == 4 && this.status === 404) {
