@@ -83,24 +83,37 @@ var static;
 function getPatchNotesForChampionIdAndAbility(championId, ability) {
 	data = championData[championId];
 	if (!data) {
-		return "";
+		return ["none", ""];
 	}
 	
 	if (ability == "baseStats") {
 		data = data["patches"];
 		if (data.length > 0) {
-			return '<br /><div class="name">' + data[0].version + '</div>' + '<div class="information">' + data[0].changes + '</div>';
+			return [data[0].type, '<br /><div class="name">' + data[0].version + '</div>' + '<div class="information">' + data[0].changes + '</div>'];
 		} else {
-			return "";
+			return ["none", ""];
 		}
 	} else {
 		data = data[ability]["patches"];
 		if (data.length > 0) {
-			return '<br /><div class="name">' + data[0].version + '</div>' + '<div class="information">' + data[0].changes + '</div>';
+			return [data[0].type, '<br /><div class="name">' + data[0].version + '</div>' + '<div class="information">' + data[0].changes + '</div>'];
 		} else {
-			return "";
+			return ["none", ""];
 		}
 	}
+}
+
+function getColorForChangeType(changeType) {
+	if (changeType == "other") {
+		return "orange";
+	}
+	if (changeType == "buff") {
+		return "green";
+	}
+	if (changeType == "nerf") {
+		return "red";
+	}
+	return "#282828";
 }
 
 var picks;
@@ -128,11 +141,14 @@ function readPicks() {
         if (id) {
           var key = static.champion.id[id].key;
           //static.skills.Annie.P.image
-          var pHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/champion/'+key+'.png">';
+		  var baseStatsPatchNotes = getPatchNotesForChampionIdAndAbility(id, "baseStats");
+		  var changeType = baseStatsPatchNotes[0];
+		  baseStatsPatchNotes = baseStatsPatchNotes[1];
+		  var color = getColorForChangeType(changeType);
+          var pHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/champion/'+key+'.png" style="border:3px solid ' + color + '">';
 
           //player.innerHTML = pHTML;
           $(player).html(pHTML);
-		  var baseStatsPatchNotes = getPatchNotesForChampionIdAndAbility(id, "baseStats");
 		  if (baseStatsPatchNotes.length > 0) {
 			pHTML = baseStatsPatchNotes;
 			$(player).find('.popup').html(pHTML);
@@ -140,64 +156,79 @@ function readPicks() {
 
           //var playerP = document.getElementById('player'+i+'p');
           //console.log("testing...", static.skills[key].P.image);
-          pHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/passive/'+static.skills[key].P.image+'">';
+		  var pPatchNotes = getPatchNotesForChampionIdAndAbility(id, "P");
+		  changeType = pPatchNotes[0];
+		  pPatchNotes = pPatchNotes[1];
+		  color = getColorForChangeType(changeType);
+          pHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/passive/'+static.skills[key].P.image+'" style="border:3px solid ' + color + '">';
           pHTML += '<div class="mouse popup">Test Tooltip</div>';
           $(player).siblings('.p').html(pHTML);
           pHTML = '<div class="name">'+static.skills[key].P.name+'</div>';
           pHTML+= '<div class="information">'+static.skills[key].P.description+'</div>';
-		  var pPatchNotes = getPatchNotesForChampionIdAndAbility(id, "P");
 		  if (pPatchNotes.length > 0) {
 			  pHTML += pPatchNotes;
 		  }
           $(player).siblings('.p').find('.popup').html(pHTML);
 
           //var playerQ = document.getElementById('player'+i+'q');
-          qHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].Q.image+'">';
+		  var qPatchNotes = getPatchNotesForChampionIdAndAbility(id, "Q");
+		  changeType = qPatchNotes[0];
+		  qPatchNotes = qPatchNotes[1];
+		  color = getColorForChangeType(changeType);
+          qHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].Q.image+'" style="border:3px solid ' + color + '">';
           qHTML += '<div class="mouse popup">Test Tooltip</div>';
           //playerQ.html(qHTML);
           $(player).siblings('.q').html(qHTML);
           qHTML = '<div class="name">'+static.skills[key].Q.name+'</div>';
           qHTML+= '<div class="information">'+static.skills[key].Q.description+'</div>';
-          var qPatchNotes = getPatchNotesForChampionIdAndAbility(id, "Q");
 		  if (qPatchNotes.length > 0) {
 			  qHTML += qPatchNotes;
 		  }
 		  $(player).siblings('.q').find('.popup').html(qHTML);
 
           //var playerW = document.getElementById('player'+i+'w');
-          wHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].W.image+'">';
+		  var wPatchNotes = getPatchNotesForChampionIdAndAbility(id, "W");
+		  changeType = wPatchNotes[0];
+		  wPatchNotes = wPatchNotes[1];
+		  color = getColorForChangeType(changeType);
+          wHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].W.image+'" style="border:3px solid ' + color + '">';
           wHTML += '<div class="mouse popup">Test Tooltip</div>';
           // playerW.html(wHTML);
           $(player).siblings('.w').html(wHTML);
           wHTML = '<div class="name">'+static.skills[key].W.name+'</div>';
           wHTML+= '<div class="information">'+static.skills[key].W.description+'</div>';
-          var wPatchNotes = getPatchNotesForChampionIdAndAbility(id, "W");
 		  if (wPatchNotes.length > 0) {
 			  wHTML += wPatchNotes;
 		  }
 		  $(player).siblings('.w').find('.popup').html(wHTML);
 
           //var playerE = document.getElementById('player'+i+'e');
-          eHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].E.image+'">';
+		  var ePatchNotes = getPatchNotesForChampionIdAndAbility(id, "E");
+		  changeType = ePatchNotes[0];
+		  ePatchNotes = ePatchNotes[1];
+		  color = getColorForChangeType(changeType);
+          eHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].E.image+'" style="border:3px solid ' + color + '">';
           eHTML += '<div class="mouse popup">Test Tooltip</div>';
           // playerE.html(eHTML);
           $(player).siblings('.e').html(eHTML);
           eHTML = '<div class="name">'+static.skills[key].E.name+'</div>';
           eHTML+= '<div class="information">'+static.skills[key].E.description+'</div>';
-          var ePatchNotes = getPatchNotesForChampionIdAndAbility(id, "E");
 		  if (ePatchNotes.length > 0) {
 			  eHTML += ePatchNotes;
 		  }
 		  $(player).siblings('.e').find('.popup').html(eHTML);
 
           //var playerR = document.getElementById('player'+i+'r');
-          rHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].R.image+'">';
+		  var rPatchNotes = getPatchNotesForChampionIdAndAbility(id, "R");
+		  changeType = rPatchNotes[0];
+		  rPatchNotes = rPatchNotes[1];
+		  color = getColorForChangeType(changeType);
+          rHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].R.image+'" style="border:3px solid ' + color + '">';
           rHTML += '<div class="mouse popup">Test Tooltip</div>';
           // playerR.html(rHTML);
           $(player).siblings('.r').html(rHTML);
           rHTML = '<div class="name">'+static.skills[key].R.name+'</div>';
           rHTML+= '<div class="information">'+static.skills[key].R.description+'</div>';
-          var rPatchNotes = getPatchNotesForChampionIdAndAbility(id, "R");
 		  if (rPatchNotes.length > 0) {
 			  rHTML += rPatchNotes;
 		  }
