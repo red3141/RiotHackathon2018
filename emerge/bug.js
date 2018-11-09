@@ -259,8 +259,10 @@ if (this.readyState == 4 && this.status === 404) {
           console.log('Not in Champion Select');
           $('#patch-notes-container').removeClass('show-pregame');
           $('[id^=player]').css('visibility', 'hidden');
+          $('.toggle-button').hide();
     } else {
       $('#patch-notes-container').addClass('show-pregame');
+      $('.toggle-button').show();
 
     }
 //http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/AatroxE.png
@@ -278,6 +280,7 @@ if (this.readyState == 4 && this.status === 404) {
           console.log('Not in Champion Select');
           $('#patch-notes-container').removeClass('show-pregame');
           $('[id^=player]').css('visibility', 'hidden');
+          $('.toggle-button').hide();
     }
   }
   x.open("GET", "https://127.0.0.1:"+port+"/lol-champ-select/v1/session");
@@ -322,7 +325,20 @@ window.addEventListener(
   event => window.removeEventListener('mousemove', onMouseMove)
 )
 
-/////////////////////////////////////////////////////////////////////////////////
+window.addEventListener('click', onToggleClicked)
+window.addEventListener(
+  'beforeunload',
+  event => window.removeEventListener('click', onToggleClicked)
+)
+
+function onToggleClicked ( event ) {
+  let el = event.target
+  if (el.classList.contains('toggle-button')) {
+      console.log('clicked');
+    $('#toggle-container').toggle();
+  } else {
+  }
+}//////////////////////////////////////////////////////////////////////////
 
 // Logging with visual feedback
 // - does not affect functionality or bug

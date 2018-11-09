@@ -49,6 +49,23 @@ body {
 .playerTeam {
   position: fixed; top:0px;
 }
+#toggle-button {
+      position: fixed;
+    top: 50px;
+    background: blue;
+    left: 359px;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+        background: transparent;
+    border: solid 1px rgba(255,255,255,0.5);
+    box-shadow: thistle;
+    box-shadow: 1px 1px 7px 3px rgba(0,0,0,0.9);
+    user-select: none;
+}
+#toggle-button:hover {
+  cursor: pointer;
+}
 .playerTeam.you {
   left: 0;
 }
@@ -75,6 +92,16 @@ body {
     padding-right: 150px;
 
      justify-content: flex-end;
+}
+.playerTeam.them .ability {
+
+        direction: rtl;
+
+}
+.playerTeam.them .ability .popup{
+
+        text-align:left;
+        
 }
 .container {
   visibility: hidden;

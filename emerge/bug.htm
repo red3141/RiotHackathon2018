@@ -4,14 +4,18 @@
 <link rel="stylesheet" href="patchnotestyle.css">
 <!-- <script>window.$ = window.jQuery = require('resources/jquery.min.js');</script> -->
 <script src="resources/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
-<!-- <script src="resources/tippy/js/tippy.js"></script>
+<!-- <script src="resources/tippy/js/tippy.js"></script> -->
 <!-- <script src="resources/jquery.min.js"></script> -->
 <link rel="stylesheet" href="resources/tippy/css/tippy.css">
 <script src="bug.js"></script>
 </head><body>
 
   <div class="window-handle"></div>
+  <div id="toggle-button" class="toggle-button mouse">
+    Toggle Pregame
+  </div>
   <div class="state">setIgnoreMouseEvents(false)</div>
+  <div id="toggle-container">
   <div  id="patch-notes-container">
   <!-- ##Left Side -->
   <div class="playerTeam you">
@@ -140,6 +144,6 @@
     <div class="ability r"></div>
     </div>
   	</div>
-
+</div>
 </div>
 </body></html>
