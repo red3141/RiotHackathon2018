@@ -94,7 +94,7 @@ var counters;
   x.onreadystatechange = function() { if (this.readyState == 4 && this.status == 200) {
       counters = JSON.parse(x.response);
       counters = counters[0].counterlose; 
-      console.log(counters);
+      //console.log(counters);
     }
   }
   x.open("POST", "http://builds.lol/hack/counters.json");
@@ -102,23 +102,21 @@ var counters;
   x.send();
 })();
 
-var counterID = [];
+var counterID = new Object();
 
 function findCounters(){
-  for (k = 0; k <=4; k ++){
+  for (k = 1; k <=5; k ++){
     if (!chosen[k]) {
       continue;
     }
-    for (i = 5; i <=9; i ++){
+    for (i = 6; i <=10; i ++) {
       for (j = 0; j < 8; j ++){
-        if(chosen[i] == nameToIDData[counters[chosen[k]][j][0]]){
-          counterID.push(chosen[i]); 
+        if(chosen[i] == parseInt(nameToIDData[counters[chosen[k]][j][0]])){
+          counterID[chosen[i]] = true; 
         }
       }
     }
   }
-
-  console.log(counterID);
 }
 
 function getPatchNotesForChampionIdAndAbility(championId, ability) {
@@ -301,7 +299,7 @@ function readPicks() {
           
 
 if (this.readyState == 4 && this.status === 404) {
-          console.log('Not in Champion Select');
+          //console.log('Not in Champion Select');
           $('#patch-notes-container').removeClass('show-pregame');
           $('[id^=player]').css('visibility', 'hidden');
           $('.toggle-button').hide();
@@ -319,10 +317,10 @@ if (this.readyState == 4 && this.status === 404) {
         player.innerHTML = '';
       }
     }
-    console.log(chosen);
+    //console.log(chosen);
     }
     if (this.readyState == 4 && this.status === 404) {
-          console.log('Not in Champion Select');
+          //console.log('Not in Champion Select');
           $('#patch-notes-container').removeClass('show-pregame');
           $('[id^=player]').css('visibility', 'hidden');
           $('.toggle-button').hide();
@@ -343,7 +341,7 @@ jQuery(document).ready(function($){
 
 setInterval(function(){ 
   readPicks(); 
-  console.log(chosen);
+  //console.log(chosen);
 }, 1000);
 
 });
@@ -379,7 +377,7 @@ window.addEventListener(
 function onToggleClicked ( event ) {
   let el = event.target
   if (el.classList.contains('toggle-button')) {
-      console.log('clicked');
+      //console.log('clicked');
     $('#toggle-container').toggle();
   } else {
   }
