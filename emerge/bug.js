@@ -89,14 +89,14 @@ function getPatchNotesForChampionIdAndAbility(championId, ability) {
 	if (ability == "baseStats") {
 		data = data["patches"];
 		if (data.length > 0) {
-			return [data[0].type, '<div class="name" style="color:' + getColorForChangeType(data[0].type) + '">' + data[0].version.toFixed(2) + getTextForChangeType(data[0].type) + '</div>' + '<div class="information">' + data[0].changes + '</div>'];
+			return [data[0].type, '<div class="name">' + data[0].version.toFixed(2) + '</div>' + '<div class="information">' + data[0].changes + '</div>'];
 		} else {
 			return ["none", ""];
 		}
 	} else {
 		data = data[ability]["patches"];
 		if (data.length > 0) {
-			return [data[0].type, '<br /><div class="name" style="color:' + getColorForChangeType(data[0].type) + '">' + data[0].version.toFixed(2) + getTextForChangeType(data[0].type) + '</div>' + '<div class="information">' + data[0].changes + '</div>'];
+			return [data[0].type, '<br /><div class="name">' + data[0].version.toFixed(2) + '</div>' + '<div class="information">' + data[0].changes + '</div>'];
 		} else {
 			return ["none", ""];
 		}
@@ -114,19 +114,6 @@ function getColorForChangeType(changeType) {
 		return "red";
 	}
 	return "#282828";
-}
-
-function getTextForChangeType(changeType) {
-	if (changeType == "other") {
-		return " - Change";
-	}
-	if (changeType == "buff") {
-		return " - Buff";
-	}
-	if (changeType == "nerf") {
-		return " - Nerf";
-	}
-	return "";
 }
 
 var picks;
