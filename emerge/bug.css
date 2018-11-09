@@ -13,7 +13,87 @@ body {
   border: 1px solid black;
   box-sizing: border-box;
 }
+.playerTeam {
+  position: fixed; top:0px;
+}
+.playerTeam.you {
+  left: 0;
+}
+.playerTeam.them {
+  right: 0;
+}
+.individual {
+  position: absolute;
+  display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    border:solid 1px cyan;
+}
+.playerTeam .individual {
+    width: 220px;
+    height: 77px;
+    cursor: pointer;
+}
+.playerTeam.you .individual {
+    padding-left: 150px;
 
+     justify-content: flex-start;
+}
+.playerTeam.them .individual {
+    padding-right: 150px;
+
+     justify-content: flex-end;
+}
+.container {
+  /*position:absolute; bottom: 0px; left:20px; width: 60px; height: 60px;*/
+}
+.individual .container {
+  position: absolute;
+  background:red;
+
+    top: 7px;
+}
+.you .individual .container {
+  position: absolute;
+      left: 205px;
+}
+.them .individual .container {
+  position: absolute;
+  right: 205px;
+}
+.container > img {
+    width: 30px;
+    height: 30px;
+    z-index: 1
+}
+.p img,.q img,.w img,.e img,.r img {
+  width: 20px;
+height: 20px;
+background: red;
+}
+
+div[id^player] {
+  position:absolute; bottom:0px; left:123px; width: 20px; height: 20px;
+}
+.ability {
+      width: 20px;
+    height: 20px;
+    background: red;
+    margin: 0 2px;
+}
+.ability > img {
+  width: 20px;
+  height: 20px;
+}
+.them .b {
+  margin-right: 10px;
+}
+.you .b {
+  margin-right: 10px;
+}
+div[id^player] img {
+  width: 20px; height: 20px;
+}
 .window-handle {
   display: flex;
   position: absolute;
@@ -89,15 +169,47 @@ body {
 */
 .playerTeam {
 
-  width:20%;
+  width:320;
   height:100%;
   cursor: pointer;
 }
 .individual {
 
-  width:20%;
-  height:80px;
+  width:320px;
+  height:78px;
   cursor: pointer;
+}
+.individual:nth-of-type(1) {
+      top: 128px;
+}
+.individual:nth-of-type(2) {
+      top: 206px;
+}
+.individual:nth-of-type(3) {
+      top: 284px;
+}
+.individual:nth-of-type(4) {
+      top: 362px;
+}
+.individual:nth-of-type(5) {
+      top: 440;
+}
+
+
+.individual:nth-of-type(6) {
+      top: 128px;
+}
+.individual:nth-of-type(7) {
+      top: 206px;
+}
+.individual:nth-of-type(8) {
+      top: 284px;
+}
+.individual:nth-of-type(9) {
+      top: 362px;
+}
+.individual:nth-of-type(10) {
+      top: 440;
 }
 
 .container {
@@ -106,7 +218,8 @@ body {
   height: 20px;*/
   cursor: pointer;
   /*background-color: grey;*/
-}.container:hover .overlay {
+}
+.container:hover .overlay {
   opacity: 0.5;
 }
 

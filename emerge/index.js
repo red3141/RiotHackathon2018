@@ -10,7 +10,7 @@ app.on('certificate-error', (event, webContents, url, error, certificate, callba
 app.on('ready', ()=>{
   let browser = new BrowserWindow({
     width: 1280,
-    height: 720,
+    height: 750,
     transparent: true,
     frame: false,
     alwaysOnTop: true

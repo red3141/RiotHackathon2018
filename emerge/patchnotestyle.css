@@ -1,4 +1,16 @@
-<style>
+.state {
+  display: none !important;
+}
+.window-handle {
+ /*background: 0 !important;*/
+}
+.window-handle:hover {
+  cursor: pointer !important;
+  background: red;
+}
+body {
+      /*border: none !important;*/
+}
 .item {
   display: block;
   padding-bottom: 5px;
@@ -480,4 +492,3 @@
   }
 }
 
-</style>

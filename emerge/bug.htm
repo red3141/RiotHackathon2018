@@ -1,135 +1,143 @@
 <html><head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="bug.css">
-<script defer src="bug.js"></script>
+<link rel="stylesheet" href="patchnotestyle.css">
+<!-- <script>window.$ = window.jQuery = require('resources/jquery.min.js');</script> -->
+<script src="resources/jquery.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+<script src="resources/tippy/js/tippy.js"></script>
+<link rel="stylesheet" href="resources/tippy/css/tippy.css">
+
+<!-- <script src="resources/jquery.min.js"></script> -->
+<script src="bug.js"></script>
 </head><body>
 
   <div class="window-handle"></div>
   <div class="state">setIgnoreMouseEvents(false)</div>
   <!-- ##Left Side -->
-  <div class="playerTeam" style= "position: fixed; top:0px; left:0px;">
-  	<div class="individual" style= "position: fixed; left:0px; top:94px;">
-  	  <div class="container" style= "position:absolute; bottom: 0px; left:20px; width: 60px; height: 60px;">
-  		<img src="resources/warning.png" id="counter" alt="counter" class="image" style= "position:relative; width: 60px;height: 60px;">
+  <div class="playerTeam you">
+  	<div class="individual">
+  	  <div class="container">
+  		  <img src="resources/warning.png" id="counter" alt="counter" class="image" />
+  		  <div class="overlay mouse"></div>
+  	  </div>
+  	  <div id="player1" class="ability b" data-tippy="<strong>test</strong>"></div>
+  	  <div class="ability p" data-tippy="<strong>test</strong>"></div>
+  	  <div class="ability q" data-tippy="<strong>test</strong>"></div>
+  	  <div class="ability w" data-tippy="<strong>test</strong>"></div>
+  	  <div class="ability e" data-tippy="<strong>test</strong>"></div>
+  	  <div class="ability r" data-tippy="<strong>test</strong>"></div>
+  	</div>
+  	<div class="individual">
+  	  <div class="container">
+  		<img src="resources/warning.png" id="counter" alt="counter" class="image" />
   		<div class="overlay mouse"></div>
   	  </div>
-  	  <div id="player1" class="container" style= "position:absolute; bottom:0px; left:123px; width: 20px; height: 20px;"></div>
-  	  <div id="player1p" class="container" style= "position:absolute; bottom:0px; left:148px; width: 20px; height: 20px;"></div>
-  	  <div id="player1q" class="container" style= "position:absolute; bottom:0px; left:173px; width: 20px; height: 20px;"></div>
-  	  <div id="player1w" class="container" style= "position:absolute; bottom:0px; left:198px; width: 20px; height: 20px;"></div>
-  	  <div id="player1e" class="container" style= "position:absolute; bottom:0px; left:223px;width: 20px; height: 20px;"></div>
-  	  <div id="player1r" class="container" style= "position:absolute; bottom:0px; left:248px; width: 20px; height: 20px;"></div>
+  	  <div id="player2" class="ability b" data-tippy="<strong>test</strong>"></div>
+  	  <div class="ability p" data-tippy="<strong>test</strong>"></div>
+  	  <div class="ability q" data-tippy="<strong>test</strong>"></div>
+  	  <div class="ability w" data-tippy="<strong>test</strong>"></div>
+  	  <div class="ability e" data-tippy="<strong>test</strong>"></div>
+  	  <div class="ability r" data-tippy="<strong>test</strong>"></div>
   	</div>
-  	<div class="individual" style= "  position: fixed; top:174px;">
-  	  <div class="container" style= "position:absolute; bottom:0; left:20px; width: 60px; height: 60px;">
-  		<img src="resources/warning.png" id="counter" alt="counter" class="image" style= "position:relative; width: 60px;height: 60px;">
+  	<div class="individual">
+  	  <div class="container">
+  		<img src="resources/warning.png" id="counter" alt="counter" class="image" />
   		<div class="overlay mouse"></div>
   	  </div>
-  	  <div id="player2" class="container" style= "position:absolute; bottom:0px; left:123px; width: 20px; height: 20px;"></div>
-  	  <div id="player2p" class="container" style= "position:absolute; bottom:0px; left:148px; width: 20px; height: 20px;"></div>
-  	  <div id="player2q" class="container" style= "position:absolute; bottom:0px; left:173px; width: 20px; height: 20px;"></div>
-  	  <div id="player2w" class="container" style= "position:absolute; bottom:0px; left:198px; width: 20px; height: 20px;"></div>
-  	  <div id="player2e" class="container" style= "position:absolute; bottom:0px; left:223px;width: 20px; height: 20px;"></div>
-  	  <div id="player2r" class="container" style= "position:absolute; bottom:0px; left:248px; width: 20px; height: 20px;"></div>
+  	  <div id="player3" class="ability b" data-tippy="<strong>test</strong>"></div>
+  	  <div class="ability p" data-tippy="<strong>test</strong>"></div>
+  	  <div class="ability q" data-tippy="<strong>test</strong>"></div>
+  	  <div class="ability w" data-tippy="<strong>test</strong>"></div>
+  	  <div class="ability e" data-tippy="<strong>test</strong>"></div>
+  	  <div class="ability r" data-tippy="<strong>test</strong>"></div>
   	</div>
-  	<div class="individual" style= "  position: fixed; top:254px;">
-  	  <div class="container" style= "position:absolute; bottom:0; left:20px; width: 60px; height: 60px;">
-  		<img src="resources/warning.png" id="counter" alt="counter" class="image" style= "position:relative; width: 60px;height: 60px;">
-  		<div class="overlay mouse"></div>
-  	  </div>
-  	  <div id="player3" class="container" style= "position:absolute; bottom:0px; left:123px; width: 20px; height: 20px;"></div>
-  	  <div id="player3p" class="container" style= "position:absolute; bottom:0px; left:148px; width: 20px; height: 20px;"></div>
-  	  <div id="player3q" class="container" style= "position:absolute; bottom:0px; left:173px; width: 20px; height: 20px;"></div>
-  	  <div id="player3w" class="container" style= "position:absolute; bottom:0px; left:198px; width: 20px; height: 20px;"></div>
-  	  <div id="player3e" class="container" style= "position:absolute; bottom:0px; left:223px;width: 20px; height: 20px;"></div>
-  	  <div id="player3r" class="container" style= "position:absolute; bottom:0px; left:248px; width: 20px; height: 20px;"></div>
-  	</div>
-  	<div class="individual" style= "  position: fixed; top:334px;">
-	  <div class="container" style= "position:absolute; bottom:0; left:20px; width: 60px; height: 60px;">
-		<img src="resources/warning.png" id="counter" alt="counter" class="image" style= "position:relative; width: 60px;height: 60px;">
+  	<div class="individual">
+	  <div class="container">
+		<img src="resources/warning.png" id="counter" alt="counter" class="image" />
 		<div class="overlay mouse"></div>
 	  </div>
-	  <div id="player4" class="container" style= "position:absolute; bottom:0px; left:123px; width: 20px; height: 20px;"></div>
-	  <div id="player4p" class="container" style= "position:absolute; bottom:0px; left:148px; width: 20px; height: 20px;"></div>
-	  <div id="player4q" class="container" style= "position:absolute; bottom:0px; left:173px; width: 20px; height: 20px;"></div>
-	  <div id="player4w" class="container" style= "position:absolute; bottom:0px; left:198px; width: 20px; height: 20px;"></div>
-	  <div id="player4e" class="container" style= "position:absolute; bottom:0px; left:223px;width: 20px; height: 20px;"></div>
-	  <div id="player4r" class="container" style= "position:absolute; bottom:0px; left:248px; width: 20px; height: 20px;"></div>
+	  <div id="player4" class="ability b" data-tippy="<strong>test</strong>"></div>
+	  <div class="ability p" data-tippy="<strong>test</strong>"></div>
+	  <div class="ability q" data-tippy="<strong>test</strong>"></div>
+	  <div class="ability w" data-tippy="<strong>test</strong>"></div>
+	  <div class="ability e" data-tippy="<strong>test</strong>"></div>
+	  <div class="ability r" data-tippy="<strong>test</strong>"></div>
   	</div>
-  	<div class="individual" style= "  position: fixed; top:414px;">
-	  <div class="container" style= "position:absolute; bottom:0; left:20px; width: 60px; height: 60px;">
-		<img src="resources/warning.png" id="counter" alt="counter" class="image" style= "position:relative; width: 60px;height: 60px;">
+  	<div class="individual">
+	  <div class="container">
+		<img src="resources/warning.png" id="counter" alt="counter" class="image" />
 		<div class="overlay mouse"></div>
 	  </div>
-	  <div id="player5" class="container" style= "position:absolute; bottom:0px; left:123px; width: 20px; height: 20px;"></div>
-	  <div id="player5p" class="container" style= "position:absolute; bottom:0px; left:148px; width: 20px; height: 20px;"></div>
-	  <div id="player5q" class="container" style= "position:absolute; bottom:0px; left:173px; width: 20px; height: 20px;"></div>
-	  <div id="player5w" class="container" style= "position:absolute; bottom:0px; left:198px; width: 20px; height: 20px;"></div>
-	  <div id="player5e" class="container" style= "position:absolute; bottom:0px; left:223px;width: 20px; height: 20px;"></div>
-	  <div id="player5r" class="container" style= "position:absolute; bottom:0px; left:248px; width: 20px; height: 20px;"></div>
+	  <div id="player5" class="ability b" data-tippy="<strong>test</strong>"></div>
+	  <div class="ability p" data-tippy="<strong>test</strong>"></div>
+	  <div class="ability q" data-tippy="<strong>test</strong>"></div>
+	  <div class="ability w" data-tippy="<strong>test</strong>"></div>
+	  <div class="ability e" data-tippy="<strong>test</strong>"></div>
+	  <div class="ability r" data-tippy="<strong>test</strong>"></div>
   	</div>
   </div>
 
   <!-- ##Right Side -->
-  <div class="playerTeam" style= "position: fixed; top:0px; right:0px;">
-  	<div class="individual" style= "position: fixed; right:0px; top:94px;">
-  	  <div class="container" style= "position:absolute; bottom: 0px; right:20px; width: 60px; height: 60px;">
-		<img src="resources/warning.png" id="counter" alt="counter" class="image" style= "position:relative; width: 60px;height: 60px;">
-		<div class="overlay mouse"></div>
-	  </div>
-	  <div id="player6" class="container" style= "position:absolute; bottom:0px; right:123px; width: 20px; height: 20px;"></div>
-	  <div id="player6p" class="container" style= "position:absolute; bottom:0px; right:148px; width: 20px; height: 20px;"></div>
-	  <div id="player6q" class="container" style= "position:absolute; bottom:0px; right:173px; width: 20px; height: 20px;"></div>
-	  <div id="player6w" class="container" style= "position:absolute; bottom:0px; right:198px; width: 20px; height: 20px;"></div>
-	  <div id="player6e" class="container" style= "position:absolute; bottom:0px; right:223px;width: 20px; height: 20px;"></div>
-	  <div id="player6r" class="container" style= "position:absolute; bottom:0px; right:248px; width: 20px; height: 20px;"></div>
-  	</div>
-  	<div class="individual" style= "  position: fixed; top:174px;">
-  	  <div class="container" style= "position:absolute; bottom: 0px; right:20px; width: 60px; height: 60px;">
-  		<img src="resources/warning.png" id="counter" alt="counter" class="image" style= "position:relative; width: 60px;height: 60px;">
-  		<div class="overlay mouse"></div>
-  	  </div>
-  	  <div id="player7" class="container" style= "position:absolute; bottom:0px; right:123px; width: 20px; height: 20px;"></div>
-  	  <div id="player7p" class="container" style= "position:absolute; bottom:0px; right:148px; width: 20px; height: 20px;"></div>
-  	  <div id="player7q" class="container" style= "position:absolute; bottom:0px; right:173px; width: 20px; height: 20px;"></div>
-  	  <div id="player7w" class="container" style= "position:absolute; bottom:0px; right:198px; width: 20px; height: 20px;"></div>
-  	  <div id="player7e" class="container" style= "position:absolute; bottom:0px; right:223px;width: 20px; height: 20px;"></div>
-  	  <div id="player7r" class="container" style= "position:absolute; bottom:0px; right:248px; width: 20px; height: 20px;"></div>
-      </div>
-  	<div class="individual" style= "  position: fixed; top:254px;">
-  	  <div class="container" style= "position:absolute; bottom: 0px; right:20px; width: 60px; height: 60px;">
-  		<img src="resources/warning.png" id="counter" alt="counter" class="image" style= "position:relative; width: 60px;height: 60px;">
-  		<div class="overlay mouse"></div>
-  	  </div>
-  	  <div id="player8" class="container" style= "position:absolute; bottom:0px; right:123px; width: 20px; height: 20px;"></div>
-  	  <div id="player8p" class="container" style= "position:absolute; bottom:0px; right:148px; width: 20px; height: 20px;"></div>
-  	  <div id="player8q" class="container" style= "position:absolute; bottom:0px; right:173px; width: 20px; height: 20px;"></div>
-  	  <div id="player8w" class="container" style= "position:absolute; bottom:0px; right:198px; width: 20px; height: 20px;"></div>
-  	  <div id="player8e" class="container" style= "position:absolute; bottom:0px; right:223px;width: 20px; height: 20px;"></div>
-  	  <div id="player8r" class="container" style= "position:absolute; bottom:0px; right:248px; width: 20px; height: 20px;"></div>
-    	</div>
-  	<div class="individual" style= "  position: fixed; top:334px;">
-  	  <div class="container" style= "position:absolute; bottom: 0px; right:20px; width: 60px; height: 60px;">
-  		<img src="resources/warning.png" id="counter" alt="counter" class="image" style= "position:relative; width: 60px;height: 60px;">
-  		<div class="overlay mouse"></div>
-  	  </div>
-  	  <div id="player9" class="container" style= "position:absolute; bottom:0px; right:123px; width: 20px; height: 20px;"></div>
-  	  <div id="player9p" class="container" style= "position:absolute; bottom:0px; right:148px; width: 20px; height: 20px;"></div>
-  	  <div id="player9q" class="container" style= "position:absolute; bottom:0px; right:173px; width: 20px; height: 20px;"></div>
-  	  <div id="player9w" class="container" style= "position:absolute; bottom:0px; right:198px; width: 20px; height: 20px;"></div>
-  	  <div id="player9e" class="container" style= "position:absolute; bottom:0px; right:223px;width: 20px; height: 20px;"></div>
-  	  <div id="player9r" class="container" style= "position:absolute; bottom:0px; right:248px; width: 20px; height: 20px;"></div>
-    	</div>
-  	<div class="individual" style= "  position: fixed; top:414px;">
-  	  <div class="container" style= "position:absolute; bottom: 0px; right:20px; width: 60px; height: 60px;">
-  		<img src="resources/warning.png" id="counter" alt="counter" class="image" style= "position:relative; width: 60px;height: 60px;">
-  		<div class="overlay mouse"></div>
-  	  </div>
-  	  <div id="player10" class="container" style= "position:absolute; bottom:0px; right:123px; width: 20px; height: 20px;"></div>
-  	  <div id="player10p" class="container" style= "position:absolute; bottom:0px; right:148px; width: 20px; height: 20px;"></div>
-  	  <div id="player10q" class="container" style= "position:absolute; bottom:0px; right:173px; width: 20px; height: 20px;"></div>
-  	  <div id="player10w" class="container" style= "position:absolute; bottom:0px; right:198px; width: 20px; height: 20px;"></div>
-  	  <div id="player10e" class="container" style= "position:absolute; bottom:0px; right:223px;width: 20px; height: 20px;"></div>
-  	  <div id="player10r" class="container" style= "position:absolute; bottom:0px; right:248px; width: 20px; height: 20px;"></div>
+  <div class="playerTeam them">
+    <div class="individual">
+    <div class="container">
+    <img src="resources/warning.png" id="counter" alt="counter" class="image" />
+    <div class="overlay mouse"></div>
     </div>
+    <div id="player6" class="ability b" data-tippy="<strong>test</strong>"></div>
+    <div class="ability p" data-tippy="<strong>test</strong>"></div>
+    <div class="ability q" data-tippy="<strong>test</strong>"></div>
+    <div class="ability w" data-tippy="<strong>test</strong>"></div>
+    <div class="ability e" data-tippy="<strong>test</strong>"></div>
+    <div class="ability r" data-tippy="<strong>test</strong>"></div>
+    </div>
+    <div class="individual">
+    <div class="container">
+    <img src="resources/warning.png" id="counter" alt="counter" class="image" />
+    <div class="overlay mouse"></div>
+    </div>
+    <div id="player7" class="ability b" data-tippy="<strong>test</strong>"></div>
+    <div class="ability p" data-tippy="<strong>test</strong>"></div>
+    <div class="ability q" data-tippy="<strong>test</strong>"></div>
+    <div class="ability w" data-tippy="<strong>test</strong>"></div>
+    <div class="ability e" data-tippy="<strong>test</strong>"></div>
+    <div class="ability r" data-tippy="<strong>test</strong>"></div>
+    </div>
+    <div class="individual">
+    <div class="container">
+    <img src="resources/warning.png" id="counter" alt="counter" class="image" />
+    <div class="overlay mouse"></div>
+    </div>
+    <div id="player8" class="ability b" data-tippy="<strong>test</strong>"></div>
+    <div class="ability p" data-tippy="<strong>test</strong>"></div>
+    <div class="ability q" data-tippy="<strong>test</strong>"></div>
+    <div class="ability w" data-tippy="<strong>test</strong>"></div>
+    <div class="ability e" data-tippy="<strong>test</strong>"></div>
+    <div class="ability r" data-tippy="<strong>test</strong>"></div>
+    </div>
+    <div class="individual">
+    <div class="container">
+    <img src="resources/warning.png" id="counter" alt="counter" class="image" />
+    <div class="overlay mouse"></div>
+    </div>
+    <div id="player9" class="ability b" data-tippy="<strong>test</strong>"></div>
+    <div class="ability p" data-tippy="<strong>test</strong>"></div>
+    <div class="ability q" data-tippy="<strong>test</strong>"></div>
+    <div class="ability w" data-tippy="<strong>test</strong>"></div>
+    <div class="ability e" data-tippy="<strong>test</strong>"></div>
+    <div class="ability r" data-tippy="<strong>test</strong>"></div>
+    </div>
+    <div class="individual">
+    <div class="container">
+    <img src="resources/warning.png" id="counter" alt="counter" class="image" />
+    <div class="overlay mouse"></div>
+    </div>
+    <div id="player10" class="ability b" data-tippy="<strong>test</strong>"></div>
+    <div class="ability p" data-tippy="<strong>test</strong>"></div>
+    <div class="ability q" data-tippy="<strong>test</strong>"></div>
+    <div class="ability w" data-tippy="<strong>test</strong>"></div>
+    <div class="ability e" data-tippy="<strong>test</strong>"></div>
+    <div class="ability r" data-tippy="<strong>test</strong>"></div>
+    </div>
+  	</div>
 </body></html>
