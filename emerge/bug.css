@@ -49,6 +49,10 @@ body {
 .playerTeam {
   position: fixed; top:0px;
 }
+.ability .name {
+  font-weight:bold;
+  color:limegreen;
+}
 #toggle-button {
     font-size: 12px;
     position: fixed;
