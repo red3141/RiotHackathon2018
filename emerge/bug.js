@@ -32,6 +32,7 @@ var port;
 var password;
 var lockfile;
 var filepath = "C:/Riot Games/League of Legends/lockfile";
+var championData;
 
 fs.readFile(filepath, 'utf-8', (err, data) => {
     if(err){
@@ -53,6 +54,12 @@ fs.readFile(filepath, 'utf-8', (err, data) => {
   }
 );
 
+fs.readFile('./PatchesByChamp.json', 'utf-8', (err, data) => {
+	if (!err) {
+		championData = JSON.parse(data);
+	}
+});
+
 
 function processFile() {
     var res = lockfile.split(":");
@@ -73,7 +80,28 @@ var static;
   x.send();
 })();
 
-
+function getPatchNotesForChampionIdAndAbility(championId, ability) {
+	data = championData[championId];
+	if (!data) {
+		return "";
+	}
+	
+	if (ability == "baseStats") {
+		data = data["patches"];
+		if (data.length > 0) {
+			return '<br /><div class="name">' + data[0].version + '</div>' + '<div class="information">' + data[0].changes + '</div>';
+		} else {
+			return "";
+		}
+	} else {
+		data = data[ability]["patches"];
+		if (data.length > 0) {
+			return '<br /><div class="name">' + data[0].version + '</div>' + '<div class="information">' + data[0].changes + '</div>';
+		} else {
+			return "";
+		}
+	}
+}
 
 var picks;
 var chosen = new Object();
@@ -101,10 +129,14 @@ function readPicks() {
           var key = static.champion.id[id].key;
           //static.skills.Annie.P.image
           var pHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/champion/'+key+'.png">';
-          pHTML += '<div class="mouse popup">Test Tooltip</div>';
+
           //player.innerHTML = pHTML;
           $(player).html(pHTML);
-          $(player).find('.popup').html(key);
+		  var baseStatsPatchNotes = getPatchNotesForChampionIdAndAbility(id, "baseStats");
+		  if (baseStatsPatchNotes.length > 0) {
+			pHTML = baseStatsPatchNotes;
+			$(player).find('.popup').html(pHTML);
+		  }
 
           //var playerP = document.getElementById('player'+i+'p');
           //console.log("testing...", static.skills[key].P.image);
@@ -113,6 +145,10 @@ function readPicks() {
           $(player).siblings('.p').html(pHTML);
           pHTML = '<div class="name">'+static.skills[key].P.name+'</div>';
           pHTML+= '<div class="information">'+static.skills[key].P.description+'</div>';
+		  var pPatchNotes = getPatchNotesForChampionIdAndAbility(id, "P");
+		  if (pPatchNotes.length > 0) {
+			  pHTML += pPatchNotes;
+		  }
           $(player).siblings('.p').find('.popup').html(pHTML);
 
           //var playerQ = document.getElementById('player'+i+'q');
@@ -122,7 +158,11 @@ function readPicks() {
           $(player).siblings('.q').html(qHTML);
           qHTML = '<div class="name">'+static.skills[key].Q.name+'</div>';
           qHTML+= '<div class="information">'+static.skills[key].Q.description+'</div>';
-          $(player).siblings('.q').find('.popup').html(qHTML);
+          var qPatchNotes = getPatchNotesForChampionIdAndAbility(id, "Q");
+		  if (qPatchNotes.length > 0) {
+			  qHTML += qPatchNotes;
+		  }
+		  $(player).siblings('.q').find('.popup').html(qHTML);
 
           //var playerW = document.getElementById('player'+i+'w');
           wHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].W.image+'">';
@@ -131,7 +171,11 @@ function readPicks() {
           $(player).siblings('.w').html(wHTML);
           wHTML = '<div class="name">'+static.skills[key].W.name+'</div>';
           wHTML+= '<div class="information">'+static.skills[key].W.description+'</div>';
-          $(player).siblings('.w').find('.popup').html(wHTML);
+          var wPatchNotes = getPatchNotesForChampionIdAndAbility(id, "W");
+		  if (wPatchNotes.length > 0) {
+			  wHTML += wPatchNotes;
+		  }
+		  $(player).siblings('.w').find('.popup').html(wHTML);
 
           //var playerE = document.getElementById('player'+i+'e');
           eHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].E.image+'">';
@@ -140,7 +184,11 @@ function readPicks() {
           $(player).siblings('.e').html(eHTML);
           eHTML = '<div class="name">'+static.skills[key].E.name+'</div>';
           eHTML+= '<div class="information">'+static.skills[key].E.description+'</div>';
-          $(player).siblings('.e').find('.popup').html(eHTML);
+          var ePatchNotes = getPatchNotesForChampionIdAndAbility(id, "E");
+		  if (ePatchNotes.length > 0) {
+			  eHTML += ePatchNotes;
+		  }
+		  $(player).siblings('.e').find('.popup').html(eHTML);
 
           //var playerR = document.getElementById('player'+i+'r');
           rHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].R.image+'">';
@@ -149,7 +197,11 @@ function readPicks() {
           $(player).siblings('.r').html(rHTML);
           rHTML = '<div class="name">'+static.skills[key].R.name+'</div>';
           rHTML+= '<div class="information">'+static.skills[key].R.description+'</div>';
-          $(player).siblings('.r').find('.popup').html(rHTML);
+          var rPatchNotes = getPatchNotesForChampionIdAndAbility(id, "R");
+		  if (rPatchNotes.length > 0) {
+			  rHTML += rPatchNotes;
+		  }
+		  $(player).siblings('.r').find('.popup').html(rHTML);
           
 
 
