@@ -101,40 +101,56 @@ function readPicks() {
           var key = static.champion.id[id].key;
           //static.skills.Annie.P.image
           var pHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/champion/'+key+'.png">';
-          pHTML += '<div class="mouse popupRight">Test Tooltip</div>';
+          pHTML += '<div class="mouse popup">Test Tooltip</div>';
           //player.innerHTML = pHTML;
           $(player).html(pHTML);
-          $(player).attr("data-tippy",key);
+          $(player).find('.popup').html(key);
 
           //var playerP = document.getElementById('player'+i+'p');
           //console.log("testing...", static.skills[key].P.image);
           pHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/passive/'+static.skills[key].P.image+'">';
+          pHTML += '<div class="mouse popup">Test Tooltip</div>';
           $(player).siblings('.p').html(pHTML);
-          $(player).siblings('.p').attr("data-tippy",key);
+          pHTML = '<div class="name">'+static.skills[key].P.name+'</div>';
+          pHTML+= '<div class="information">'+static.skills[key].P.description+'</div>';
+          $(player).siblings('.p').find('.popup').html(pHTML);
 
           //var playerQ = document.getElementById('player'+i+'q');
           qHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].Q.image+'">';
+          qHTML += '<div class="mouse popup">Test Tooltip</div>';
           //playerQ.html(qHTML);
           $(player).siblings('.q').html(qHTML);
-          $(player).siblings('.q').attr("data-tippy",key);
+          qHTML = '<div class="name">'+static.skills[key].Q.name+'</div>';
+          qHTML+= '<div class="information">'+static.skills[key].Q.description+'</div>';
+          $(player).siblings('.q').find('.popup').html(qHTML);
 
           //var playerW = document.getElementById('player'+i+'w');
           wHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].W.image+'">';
+          wHTML += '<div class="mouse popup">Test Tooltip</div>';
           // playerW.html(wHTML);
           $(player).siblings('.w').html(wHTML);
-          $(player).siblings('.w').attr("data-tippy",key);
+          wHTML = '<div class="name">'+static.skills[key].W.name+'</div>';
+          wHTML+= '<div class="information">'+static.skills[key].W.description+'</div>';
+          $(player).siblings('.w').find('.popup').html(wHTML);
 
           //var playerE = document.getElementById('player'+i+'e');
           eHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].E.image+'">';
+          eHTML += '<div class="mouse popup">Test Tooltip</div>';
           // playerE.html(eHTML);
           $(player).siblings('.e').html(eHTML);
-          $(player).siblings('.e').attr("data-tippy",key);
+          eHTML = '<div class="name">'+static.skills[key].E.name+'</div>';
+          eHTML+= '<div class="information">'+static.skills[key].E.description+'</div>';
+          $(player).siblings('.e').find('.popup').html(eHTML);
 
           //var playerR = document.getElementById('player'+i+'r');
           rHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].R.image+'">';
+          rHTML += '<div class="mouse popup">Test Tooltip</div>';
           // playerR.html(rHTML);
           $(player).siblings('.r').html(rHTML);
-          $(player).siblings('.r').attr("data-tippy",key);
+          rHTML = '<div class="name">'+static.skills[key].R.name+'</div>';
+          rHTML+= '<div class="information">'+static.skills[key].R.description+'</div>';
+          $(player).siblings('.r').find('.popup').html(rHTML);
+          
 
 
 //http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/AatroxE.png

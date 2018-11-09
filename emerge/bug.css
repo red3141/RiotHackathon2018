@@ -1,7 +1,41 @@
 html {
   background-color: transparent;
 }
+.tooltip:hover {
+    color: red;
+    margin-left: 28px; /* moves the tooltip to the right */
+    margin-top: 15px; /* moves it down */
+    position: absolute;
+    z-index: 1000;
 
+}
+.tooltip:hover {
+  display:block;
+}
+.popup {
+  display: none;
+  background:rgba(0,0,0,0.8);
+  padding: 5px;
+  z-index: 1;
+  color: white;
+      /* display: none; */
+    background: rgba(0,0,0,0.8);
+    padding: 5px;
+    z-index: 80000;
+    color: white;
+    /* width: 250px; */
+    /* height: 250px; */
+    position: absolute;
+    padding: 10px;
+    border-radius: 5px;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 100%;
+    height: 100%;
+}
+.ability:hover .popup {
+  display: flex;
+}
 body {
   display: flex;
   margin: 0;
@@ -239,39 +273,4 @@ div[id^player] img {
   opacity: 0;
   transition: .5s ease;
   background-color: #008CBA;
-}
-
-
-.container .popupRight {
-    opacity: 0;
-    background-color: black;
-    color: #fff;
-    border-radius: 6px;
-    padding: 5px 5px;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 110%;
-	transition: .5s ease;
-}
-
-.container .popupLeft {
-	opacity: 0;
-    background-color: black;
-    color: #fff;
-    border-radius: 6px;
-    padding: 5px 5px;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    right: 110%;
-	transition: .5s ease;
-}
-
-.container:hover .popupRight {
-    opacity: 1;
-}
-
-.container:hover .popupLeft {
-    opacity: 1;
 }
