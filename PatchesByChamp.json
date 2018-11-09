@@ -1,0 +1,1175 @@
+{
+    "121": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": [{
+            "version": 8.19,
+            "changes": "<span class=\"attribute\">Bonus Attack Damage Ratio</span>B\n0.2\n<span class=\"change-indicator\">&#8658;</span>\n0.4\n",
+            "type": "buff"
+          }]
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": [{
+            "version": 8.19,
+            "changes": "<span class=\"attribute\">EVOLVED NON-ISOLATED SLOW</span>\n40%\n<span class=\"change-indicator\">&#8658;</span>\n60%\n<span class=\"attribute\">EVOLVED ISOLATED SLOW</span>\n80%\n<span class=\"change-indicator\">&#8658;</span>\n90%\n",
+            "type": "buff"
+          }]
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": []
+      }
+    },
+        "60": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": [{
+            "version": 8.19,
+            "changes": "<span class=\"attribute\">COOLDOWN</span>\n26/24/22/20/18 seconds\n<span class=\"change-indicator\">&#8658;</span>\n22/21/20/19/18 seconds\n",
+            "type": "buff"
+          }]
+      },
+      "R": {
+        "patches": []
+      }
+    },
+    "142": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": [
+          {
+            "version": 8.21,
+            "changes": "<span class=\"attribute\">BASE DAMAGE</span> <span class=\"attribute-before\">50/75/100/125/150</span> <span class=\"change-indicator\">&#8658;</span> <span class=\"attribute-after\">50/80/110/140/170</span>",
+            "type": "buff"
+          }
+        ]
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": [
+          {
+            "version": 8.21,
+            "changes": "<span class=\"attribute\">COOLDOWN</span> <span class=\"attribute-before\">16/15.5/15/14.5/14 seconds</span> <span class=\"change-indicator\">&#8658;</span> <span class=\"attribute-after\">16/15/14/13/12 seconds</span>",
+            "type": "buff"
+          }
+        ]
+      },
+      "R": {
+        "patches": []
+      }
+    },
+
+    "154": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": [
+          {
+            "version": 8.21,
+            "changes": "<span class=\"attribute\">BASE DAMAGE</span> <span class=\"attribute-before\">30/40/50/60/70</span> <span class=\"change-indicator\">&#8658;</span> <span class=\"attribute-after\">40/55/70/85/100</span>",
+            "type": "buff"
+          }
+        ]
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": []
+      }
+    },
+    "112": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": [
+          {
+            "version": 8.22,
+            "changes": "<span class=\"attribute\">DISCHARGE BASE DAMAGE</span>\n          <span class=\"attribute-before\">20/50/80/110/140</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">20/45/70/95/120</span>\n        <span class=\"attribute\">DISCHARGE RATIO</span>\n          <span class=\"attribute-before\">1.0 total attack damage + 0.5 ability power</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">1.0 total attack damage + 0.55 ability power</span>\n        ",
+            "type": "other"
+          }
+        ]
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": [
+          {
+            "version": 8.22,
+            "changes": "<span class=\"attribute\">BASE DAMAGE PER TICK</span>\n          <span class=\"attribute-before\">150/250/350</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">130/210/290</span>\n        <span class=\"attribute\">RATIO PER TICK</span>\n          <span class=\"attribute-before\">0.7 ability power</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">0.85 ability power</span>\n        ",
+            "type": "other"
+          }
+        ]
+      }
+  },
+    "48": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": [
+          {
+            "version": 8.22,
+            "changes": "<span class=\"attribute\">BASE DAMAGE</span>\n          <span class=\"attribute-before\">20/30/40/50/60</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">20/35/50/65/80</span>\n        <span class=\"attribute\">RATIO</span>\n          <span class=\"attribute-before\">0/0.1/0.2/0.3/0.4 total attack damage</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">0.1/0.2/0.3/0.4/0.5 total attack damage</span>\n        ",
+            "type": "buff"
+          }
+        ]
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": []
+      }
+    },
+    "59": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": [{
+            "version": 8.19,
+            "changes": "new\nMartial Cadence now has a visual effect indicating its per target cooldown\n<span class=\"attribute\">PER TARGET COOLDOWN</span>\n10/8/6 at levels 1/7/13\n<span class=\"change-indicator\">&#8658;</span>\n6 at all levels\n<span class=\"attribute\">BUGFIX</span>\nTiamat passive will now consistently work when hitting a target with Martial Cadence\n",
+            "type": "buff"
+          }]
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": []
+      }
+    },
+    "555": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": [
+          {
+            "version": 8.22,
+            "changes": "<span class=\"attribute\">MAXIMUM GREY HEALTH</span>\n          <span class=\"attribute-before\">25% max health + 21% per 100 bonus attack damage, up to 50%</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">80 health + 8 health per 1 bonus attack damage, up to 60% max health</span>\n        ",
+            "type": "other"
+          }
+        ]
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": [
+          {
+            "version": 8.22,
+            "changes": "<span class=\"attribute\">COST</span>\n          <span class=\"attribute-before\">75 mana</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">50 mana</span>\n        <span class=\"attribute\">MOVEMENT SPEED</span>\n          <span class=\"attribute-before\">60/65/70/75/80% (+4% per 100 bonus attack damage)</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">40% at all ranks (+1.5% per 1 lethality)</span>\n        ",
+            "type": "other"
+          }
+        ]
+      },
+      "E": {
+        "patches": [
+          {
+            "version": 8.22,
+            "changes": "<span class=\"attribute\">COST</span>\n          <span class=\"attribute-before\">50 mana</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">40 mana</span>\n        <span class=\"attribute\">STUN</span>\n          <span class=\"attribute-before\">1.1/1.2/1.3/1.4/1.5 seconds</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">1.1 seconds at all ranks + 0.1 seconds per 10 lethality</span>\n        ",
+            "type": "other"
+          }
+        ]
+      },
+      "R": {
+        "patches": [
+          {
+            "version": 8.22,
+            "changes": "<span class=\"attribute\"><span class=\"new\">new</span>LETHALITY RATIO</span>\n          <span class=\"attribute-after\">Execute threshold (and damage done if target isn't within the threshold) increases by 1.5 per 1 lethality</span>\n        ",
+            "type": "buff"
+          },
+          {
+            "version": 8.19,
+            "changes": "<span class=\"attribute\">Base Damage (breaks even at level 11)</span>\n200 / 250 / 300 / 350 / 400 / 450 / 475 / 500 / 525 / 550 / 575 / 590 / 605\n<span class=\"change-indicator\">&#8658;</span>\n250 / 290 / 330 / 370 / 410 / 450 / 475 / 500 / 525 / 550 / 575 / 590 / 605\n",
+            "type": "buff"
+          }
+        ]
+      }
+  },
+    "20": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [
+        {
+          "version": 8.22,
+          "changes": "<span class=\"attribute\">BASE ATTACK DAMAGE</span><\/span>\n 57<\/span>\n â‡’<\/span>\n 61<\/span>\n ",
+          "type": "buff"
+        }
+      ],
+      "P": {
+        "patches": [
+          {
+            "version": 8.21,
+            "changes": "<span class=\"attribute\">FOLLOW THROUGH</span> <span class=\"attribute-after\">Nunu &amp; Willump's basic attack no longer cancels if Call of the Freljord expires during the attack's wind-up</span>",
+            "type": "other"
+          }
+        ]
+      },
+      "Q": {
+        "patches": [
+          {
+            "version": 8.22,
+            "changes": "<span class=\"attribute\">BASE HEAL</span>\n          <span class=\"attribute-before\">37.5/60/82.5/105/127.5 (+0.35 ability power)(+5% bonus health)</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">60/96/132/168/204 (+0.56 ability power)(+8% bonus health)</span>\n        <span class=\"attribute\">HEAL VS NON-CHAMPS</span>\n          <span class=\"attribute-before\">200% base heal</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">125% base heal <em>(values unchanged)</em></span>\n        ",
+            "type": "buff"
+          },
+          {
+            "version": 8.21,
+            "changes": "<span class=\"attribute\">BROKEN TOOTH</span> <span class=\"attribute-after\">Nunu no longer heals if Consume is blocked by a spell shield</span>",
+            "type": "nerf"
+          },
+          {
+            "version": 8.19,
+            "changes": "<span class=\"attribute\">HEALING RATIO</span>\n0.5 ability power\n<span class=\"change-indicator\">&#8658;</span>\n0.70 ability power\n<span class=\"attribute\">BUGFIX</span>\nTooltip now accurately reflects how much healing Nunu and Willump get from champions\n",
+            "type": "buff"
+          }
+        ]
+      },
+      "W": {
+        "patches": [
+          {
+            "version": 8.21,
+            "changes": "<span class=\"attribute\">(SNOW)DRIFT</span> <span class=\"attribute-after\">Snowball hitbox and steering controls updated to make using W smoother and fix various bugs around the snowball colliding (or not) with stuff</span> <span class=\"attribute\">SQUISH</span> <span class=\"attribute-after\">Rolling into small pets (ex. Shaco boxes, Yorick Mistwalkers) no longer causes the snowball to explode</span>",
+            "type": "buff"
+          },
+          {
+            "version": 8.19,
+            "changes": "new\nWillumps transition to walking after he finishes rolling his snowball will now feel smoother.\n",
+            "type": "other"
+          }
+        ]
+      },
+      "E": {
+        "patches": [{
+            "version": 8.19,
+            "changes": "<span class=\"attribute\">MAX 9 SNOWBALL HIT ABILITY POWER RATIO</span>\n0.45 ability power\n<span class=\"change-indicator\">&#8658;</span>\n0.54 ability power\n<span class=\"attribute\">WILLUMPÃ¢â‚¬â„¢S TURN (ROOT DAMAGE)</span>\n0.5 ability power\n<span class=\"change-indicator\">&#8658;</span>\n0.8 ability power\n",
+            "type": "buff"
+          }]
+      },
+      "R": {
+        "patches": [
+          {
+            "version": 8.21,
+            "changes": "<span class=\"attribute\">CONSISTENCY</span> <span class=\"attribute-after\">Fixed a bug causing Absolute Zero's damage and slow to sometimes be slightly off at full channel</span>",
+            "type": "other"
+          }
+        ]
+      }
+  },
+    "57": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": [
+          {
+            "version": 8.22,
+            "changes": "<span class=\"attribute\">DAMAGE</span>\n          <span class=\"attribute-before\">6/6.5/7/7.5/8% target's max health</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">7/7.25/7.5/7.75/8% target's max health</span>\n        <span class=\"attribute\">COOLDOWN</span>\n          <span class=\"attribute-before\">11 seconds</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">10 seconds</span>\n        ",
+            "type": "buff"
+          }
+        ]
+      },
+      "R": {
+        "patches": []
+      }
+  },
+    "7": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": [
+          {
+            "version": 8.22,
+            "changes": "<span class=\"attribute\">BASE DAMAGE</span>\n          <span class=\"attribute-before\">85/125/165/205/245</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">75/115/155/195/235</span>\n        ",
+            "type": "nerf"
+          }
+        ]
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": []
+      }
+  },
+    "30": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": [
+          {
+            "version": 8.21,
+            "changes": "<span class=\"attribute\">COOLDOWN</span> <span class=\"attribute-before\">18 seconds</span> <span class=\"change-indicator\">&#8658;</span> <span class=\"attribute-after\">15 seconds</span><span class=\"attribute\">COST</span> <span class=\"attribute-before\">100 mana</span> <span class=\"change-indicator\">&#8658;</span> <span class=\"attribute-after\">70 mana</span>",
+            "type": "buff"
+          }
+        ]
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": [
+          {
+            "version": 8.21,
+            "changes": "<span class=\"attribute\">COST</span> <span class=\"attribute-before\">150/175/200 mana</span> <span class=\"change-indicator\">&#8658;</span> <span class=\"attribute-after\">100 mana at all ranks</span>",
+            "type": "buff"
+          }
+        ]
+      }
+  },
+      "40": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": [{
+            "version": 8.19,
+            "changes": "<span class=\"attribute\">Bonus movespeed conversion to damage</span>\n15/25/35% at levels 1/7/13\n<span class=\"change-indicator\">&#8658;</span>\n25/35% at levels 1/10\n",
+            "type": "buff"
+          }]
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": []
+      }
+    },
+        "412": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": [{
+            "version": 8.19,
+            "changes": "<span class=\"attribute\">MANA COST</span>\n80\n<span class=\"change-indicator\">&#8658;</span>\n60\n<span class=\"attribute\">COOLDOWN</span>\n20/18/16/14/12\n<span class=\"change-indicator\">&#8658;</span>\n16/15/14/13/12\n",
+            "type": "buff"
+          }]
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": []
+      }
+    },
+    "43": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": [
+          {
+            "version": 8.21,
+            "changes": "<span class=\"attribute\">ROOT DURATION</span> <span class=\"attribute-before\">1/1.25/1.5/1.75/2 seconds</span> <span class=\"change-indicator\">&#8658;</span> <span class=\"attribute-after\">1.4/1.55/1.7/1.85/2 seconds</span><span class=\"attribute\">EMPOWERED DURATION BONUS</span> <span class=\"attribute-after\">+0.5/0.75/1/1.25 seconds at Mantra ranks 1-4 <em>(unchanged)</em></span>",
+            "type": "buff"
+          }
+        ]
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": []
+      }
+  },
+    "145": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": [
+          {
+            "version": 8.21,
+            "changes": "<span class=\"attribute\">PROC DAMAGE</span> <span class=\"attribute-before\">15% (+3.75% per 100 ability power) target's missing health</span> <span class=\"change-indicator\">&#8658;</span> <span class=\"attribute-after\">15% (+2.5% per 100 ability power) target's missing health</span>",
+            "type": "nerf"
+          }]
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": [
+          {
+            "version": 8.21,
+            "changes": "<span class=\"attribute\">SHIELD DURATION</span> <span class=\"attribute-before\">3 seconds</span> <span class=\"change-indicator\">&#8658;</span> <span class=\"attribute-after\">2 seconds</span>",
+            "type": "nerf"
+          }
+        ]
+      }
+  },
+    "427": {
+        "goodMatchups": [
+          12,
+          45,
+          67
+        ],
+        "badMatchups": [
+          13,
+          42,
+          12
+        ],
+        "patches": [
+          {
+          "version": 8.21,
+          "changes": "<span class=\"attribute\">MOVEMENT SPEED</span><\/span> 325<\/span> â‡’<\/span> 330<\/span>",
+          "type": "buff"
+        }
+        ],
+        "P": {
+          "patches": []
+        },
+        "Q": {
+          "patches": []
+        },
+        "W": {
+          "patches": [
+            {
+              "version": 8.21,
+              "changes": "<span class=\"attribute\">ON-HIT DAMAGE</span> <span class=\"attribute-before\">20/30/40/50/60 (+0.3 ability power)</span> <span class=\"change-indicator\">&#8658;</span> <span class=\"attribute-after\">30/37.5/45/52.5/60 (+0.3 ability power)</span>",
+              "type": "buff"
+            }
+          ]
+        },
+        "E": {
+          "patches": [
+            {
+              "version": 8.21,
+              "changes": "<span class=\"attribute\">SHIELD</span> <span class=\"attribute-before\">75/110/145/180/215</span> <span class=\"change-indicator\">&#8658;</span> <span class=\"attribute-after\">80/115/150/185/220</span>",
+              "type": "buff"
+            }
+          ]
+        },
+        "R": {
+          "patches": []
+        }
+    },
+    "39": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [
+        {
+        "version": 8.21,
+        "changes": "<span class=\"attribute\">MOVEMENT SPEED</span><\/span> 340<\/span> â‡’<\/span> 335<\/span>",
+        "type": "buff"
+        }
+      ],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": []
+      }
+  },
+    "114": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": [
+          {
+            "version": 8.19,
+            "changes": "<span class=\"attribute\">Vital Healing</span>\n25-110\n<span class=\"change-indicator\">&#8658;</span>\n35-110\n",
+            "type": "buff"
+          }
+        ]
+      },
+      "Q": {
+        "patches": [
+          {
+            "version": 8.22,
+            "changes": "<span class=\"attribute\">PRIORITIES</span>\n          <span class=\"attribute-after\">Lunge still prioritizes R Vitals then P Vitals, but now prioritizes an R-affected target next even without a Vital to proc</span>\n        <span class=\"attribute\">LESSER PRIORITIES</span>\n          <span class=\"attribute-after\">After the above prioritization, Lunge looks for a low-health champion in range, last-hittable minion in range, champion in range, then nearest unit <em>(unchanged)</em></span>\n        ",
+            "type": "buff"
+          },
+          {
+            "version": 8.19,
+            "changes": "<span class=\"attribute\">BUGFIX</span>\nLunge will once again correctly prioritize champions and vital procs over killable minions.\n",
+            "type": "buff"
+          }
+        ]
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": []
+      }
+  },
+    "119": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": [
+          {
+            "version": 8.21,
+            "changes": "<span class=\"attribute\">BUGFIX</span> <span class=\"attribute-after\">Fixed a bug where Draven's basic attack couldn't crit if it switched from a normal basic attack to a Q-empowered attack during wind-up due to Draven catching an axe</span><span class=\"attribute\">BUGFIX</span> <span class=\"attribute-after\">Fixed a bug where Draven would lose his Spinning Axe if his basic attack switched to a Q-empowered attack during wind-up and was then cancelled due to Draven's target dying the instant the attack would have fired. (This fix went out in 8.19. Did you notice?)</span>",
+            "type": "buff"
+          }
+        ]
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": []
+      }
+  },
+    "136": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [
+        {
+        "version": 8.21,
+        "changes": "<span class=\"attribute\">HEALTH</span><\/span> 562<\/span> â‡’<\/span> 510<\/span>",
+        "type": "nerf"
+        }
+      ],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": []
+      }
+  },
+      "223": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [{
+            "version": 8.19,
+            "changes": "<span class=\"attribute\">HEALTH</span>\r\n610\r\n\u21d2\r\n540\r\n",
+            "type": "nerf"
+          }],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": [{
+            "version": 8.19,
+            "changes": "<span class=\"attribute\">BUGFIX</span>\nAllies Tahm Kench has devoured will no longer sometimes be targetable when first swallowed.\n",
+            "type": "other"
+          }]
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": []
+      }
+    },
+        "96": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [{
+            "version": 8.19,
+            "changes": "<span class=\"attribute\">MOVEMENT SPEED</span>\r\n325\r\n\u21d2\r\n330\r\n",
+            "type": "buff"
+          }],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": [{
+            "version": 8.19,
+            "changes": "<span class=\"attribute\">RANGE</span>\n1200 / 1500 / 1800\n<span class=\"change-indicator\">&#8658;</span>\n1300 / 1550 / 1800\n",
+            "type": "buff"
+          }]
+      }
+    },
+    "22": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [
+        {
+        "version": 8.21,
+        "changes": "FROSTY<\/span> Fixed a bug that made Runaan's Hurricane bolts fired by Q - Ranger's Focus<\/strong> invisible<\/span>",
+        "type": "other"
+        }
+    ],
+      "P": {
+        "patches": [
+          {
+            "version": 8.21,
+            "changes": "<span class=\"attribute\">SLOW</span> <span class=\"attribute-before\">10% - 20% (lvl 1-18)</span> <span class=\"change-indicator\">&#8658;</span> <span class=\"attribute-after\">15% - 30% (lvl 1-18)</span><span class=\"attribute\">SLOW CRIT MULTIPLIER</span> <span class=\"attribute-before\">Triple</span> <span class=\"change-indicator\">&#8658;</span> <span class=\"attribute-after\">Double (slow amount unchanged due to base slow buff)</span>",
+            "type": "buff"
+          }
+        ]
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": [
+          {
+            "version": 8.21,
+            "changes": "<span class=\"attribute\">HEY</span> <span class=\"attribute-after\">Hawkshot now pings enemies it spots if your team didn't already have vision of them</span><span class=\"attribute\">FEATHERY</span> <span class=\"attribute-after\">Hawkshot vision trail duration very slightly increased to address a bug where the trail sometimes wouldn't show up on the minimap (vision duration at the destination unchanged)</span>",
+            "type": "buff"
+          }
+        ]
+      },
+      "R": {
+        "patches": []
+      }
+  },
+    "12": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [
+        {
+        "version": 8.21,
+        "changes": "<span class=\"attribute\">HEALTH</span><\/span> 613<\/span> â‡’<\/span> 573<\/span>",
+        "type": "nerf"
+        }
+      ],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": []
+      }
+  },
+    "84": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": [
+          {
+            "version": 8.22,
+            "changes": "<span class=\"attribute\">COOLDOWN</span>\n          <span class=\"attribute-before\">17/15.5/14/12.5/11 seconds</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">21/18.5/16/13.5/11 seconds</span>\n        ",
+            "type": "nerf"
+          }
+        ]
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": [
+          {
+            "version": 8.22,
+            "changes": "<span class=\"attribute\">BASE DAMAGE</span>\n          <span class=\"attribute-before\">100/150/200</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">85/150/215</span>\n        ",
+            "type": "other"
+          }
+        ]
+      }
+    },
+    "81": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": [
+        {
+        "version": 8.21,
+        "changes": "KEEP MOVING<\/span> Double-pressing Ezreal's abilities no longer cancels movement commands<\/span>",
+        "type": "other"
+        }]
+      },
+      "Q": {
+        "patches": [
+          {
+            "version": 8.20,
+            "changes": "<span class=\"attribute\">RATIO</span>\n              <span class=\"attribute-before\">0.4 ability power</span>\n              <span class=\"change-indicator\">&#8658;</span>\n              <span class=\"attribute-after\">0.3 ability power</span>\n            ",
+            "type": "nerf"
+          }
+        ]
+      },
+      "W": {
+        "patches": [
+          {
+            "version": 8.21,
+            "changes": "<span class=\"attribute\">BASE DAMAGE</span> <span class=\"attribute-before\">75/120/165/210/255</span> <span class=\"change-indicator\">&#8658;</span> <span class=\"attribute-after\">75/125/175/225/275</span>",
+            "type": "buff"
+          },
+          {
+            "version": 8.20,
+            "changes": "Ezreal fires an orb that sticks to the first champion or objective hit. Hitting the orb with an ability or attack detonates it. Detonating with an ability refunds mana.<span class=\"attribute\">DAMAGE</span>\n              <span class=\"attribute-after\">75/120/165/210/255 magic damage</span>\n            <span class=\"attribute\">RATIO</span>\n              <span class=\"attribute-after\">0.6 bonus attack damage + 0.7 ability power</span>\n            <span class=\"attribute\">RANGE</span>\n              <span class=\"attribute-after\">1150 (same as <strong>Q - Mystic Shot</strong>)</span>\n            <span class=\"attribute\">COOLDOWN</span>\n              <span class=\"attribute-after\">12 seconds</span>\n            <span class=\"attribute\">ORB DURATION</span>\n              <span class=\"attribute-after\">4 seconds</span>\n            <span class=\"attribute\">COST</span>\n              <span class=\"attribute-after\">50 mana</span>\n            <span class=\"attribute\">MANA REFUND ON ABILITY DETONATION</span>\n              <span class=\"attribute-after\">60 plus the cost of the ability that detonated Essence Flux</span>\n            <span class=\"attribute\">OBJECTIVE</span>\n              <span class=\"attribute-after\">Essence Flux can stick to champions, epic monsters, turrets, inhibitors, and the Nexus</span>\n            ",
+            "type": "other"
+          }
+        ]
+      },
+      "E": {
+        "patches": [
+          {
+            "version": 8.20,
+            "changes": "<span class=\"attribute\"><span class=\"new\">new</span>ESSENCE ATTRACTION</span>\n              <span class=\"attribute-after\">Arcane Shift now prioritizes enemies affected by Essence Flux</span>\n            ",
+            "type": "buff"
+          }
+        ]
+      },
+      "R": {
+        "patches": [
+          {
+            "version": 8.20,
+            "changes": "<span class=\"attribute\">ICONIC</span>\n              <span class=\"attribute-after\">No balance or mechanics changes. Just adding this to show off the new icon!</span>\n            ",
+            "type": "other"
+          }
+        ]
+      }
+    },
+    "103": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": [
+          {
+            "version": 8.19,
+            "changes": "<span class=\"attribute\">RATIO</span>\n40/45/50/55/60% total attack damage\n<span class=\"change-indicator\">&#8658;</span>\n50/55/60/65/70% total attack damage\n",
+            "type": "buff"
+          }
+        ]
+      },
+      "E": {
+        "patches": [
+          {
+            "version": 8.19,
+            "changes": "<span class=\"attribute\">Passive Armor Penetration</span>\n10/15/20/25/30%\n<span class=\"change-indicator\">&#8658;</span>\n15/20/25/30/35%\n",
+            "type": "buff"
+          }
+        ]
+      },
+      "R": {
+        "patches": [
+          {
+            "version": 8.20,
+            "changes": "<span class=\"attribute\">COOLDOWN</span>\n            <span class=\"attribute-before\">110/95/80 seconds</span>\n            <span class=\"change-indicator\">&#8658;</span>\n            <span class=\"attribute-after\">130/105/80 seconds</span>\n          ",
+            "type": "nerf"
+          }
+        ]
+      }
+    },
+        "28": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": [{
+          "version": 8.20,
+          "changes": "<span class=\"attribute\">EMPOWERED DAMAGE</span>\n            <span class=\"attribute-before\">95/115/135/155/175</span>\n            <span class=\"change-indicator\">&#8658;</span>\n            <span class=\"attribute-after\">75/100/125/150/175</span>\n          ",
+          "type": "nerf"
+        }]
+      },
+      "R": {
+        "patches": [
+          {
+            "version": 8.20,
+            "changes": "<span class=\"attribute\">DAMAGE</span>\n            <span class=\"attribute-before\">150/275/400</span>\n            <span class=\"change-indicator\">&#8658;</span>\n            <span class=\"attribute-after\">125/250/375</span>\n          <span class=\"attribute\">EXECUTE DAMAGE</span>\n            <span class=\"attribute-before\">300/550/800</span>\n            <span class=\"change-indicator\">&#8658;</span>\n            <span class=\"attribute-after\">250/500/750</span>\n          ",
+            "type": "nerf"
+          }
+        ]
+      }
+    },
+        "202": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": [
+          {
+            "version": 8.22,
+            "changes": "<span class=\"attribute\">ONE</span>\n          <span class=\"attribute-after\">Jhin's movement speed bonus on crit is now determined based on his attack speed when the basic attack fires, rather than when it hits</span>\n        <span class=\"attribute\">TWO</span>\n          <span class=\"attribute-after\">If Jhin crits multiple times in a row, his movement speed bonus is now recalculated for each crit, rather than each crit refreshing the duration of the first crit's bonus</span>\n        <span class=\"attribute\">THREE</span>\n          <span class=\"attribute-after\">Fixed a bug where Jhin was getting an empowered haste off his first Hail of Blades attack (the one that procs it). This is a fix to the fix we released in 8.20 which only corrected the AD conversion portion of this interaction.</span>\n        <span class=\"attribute\">FOUR</span>\n          <span class=\"attribute-after\">Fixed a bug where Jhin was <strong>NOT</strong> getting an empowered haste off his third Hail of Blades attack</span>\n        ",
+            "type": "other"
+          },
+          {
+            "version": 8.20,
+            "changes": "<span class=\"attribute\">BUGFIX</span>\n            <span class=\"attribute-after\">Hail of Blades no longer applies to Jhin's first basic attack (the one that procs it). It still properly applies to the following basic attacks as intended. (Behavior is now consistent with everyone else.)</span>\n          ",
+            "type": "other"
+          }
+        ]
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": []
+      }
+    },
+        "267": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": [
+          {
+            "version": 8.20,
+            "changes": "<span class=\"attribute\">HEAL</span>\n            <span class=\"attribute-before\">65/95/125/155/185 (+0.3 ability power)</span>\n            <span class=\"change-indicator\">&#8658;</span>\n            <span class=\"attribute-after\">60/85/110/135/160 (+0.3 ability power) <em>(damage vs enemy champions unchanged)</em></span>\n          ",
+            "type": "nerf"
+          }
+        ]
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": []
+      }
+    },
+        "104": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [
+{
+            "version": 8.20,
+            "changes": "<span class=\"attribute\">BASE AD</span><\/span>\n 66<\/span>\n â‡’<\/span>\n 63<\/span>\n ",
+            "type": "nerf"
+          }
+      ],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": []
+      }
+    },
+        "14": {
+      "goodMatchups": [
+        0
+      ],
+      "badMatchups": [
+        0
+      ],
+      "patches": [
+{
+            "version": 8.20,
+            "changes": "<span class=\"attribute\">BASE HEALTH REGEN</span><\/span>\n 9 per 5 seconds<\/span>\n â‡’<\/span>\n 7.5 per 5 seconds<\/span>\n ",
+            "type": "nerf"
+          }
+      ],
+      "P": {
+        "patches": []
+      },
+      "Q": {
+        "patches": []
+      },
+      "W": {
+        "patches": []
+      },
+      "E": {
+        "patches": []
+      },
+      "R": {
+        "patches": []
+      }
+    }
+  
+}
