@@ -19,5 +19,5 @@ app.on('ready', ()=>{
 
   browser.loadFile(`${__dirname}/bug.htm`)
 
-  browser.webContents.openDevTools({mode: 'detach'})
+  // browser.webContents.openDevTools({mode: 'detach'})
 })
