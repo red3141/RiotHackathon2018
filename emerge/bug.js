@@ -104,7 +104,29 @@ var counters;
 
 var counterID = new Object();
 
+// function findCounters(){
+//   for (k = 1; k <=5; k ++){
+//     if (!chosen[k]) {
+//       continue;4
+//     }
+//     if (!counterID[chosen[k]]) {
+//       counterID[chosen[k]] = new Set();
+//     }
+    
+//     for (i = 6; i <=10; i ++) {
+//       for (j = 0; j < 8; j ++){
+//         if(chosen[i] == parseInt(nameToIDData[counters[chosen[k]][j][0]])){
+//           counterID[chosen[k]].add(chosen[i]);
+//           console.log(counterID[chosen[k]], chosen[i]);
+//         }
+//       }
+//     }
+//   }
+// }
+
+var counterList = [];
 function findCounters(){
+  counterList.length = 0;
   for (k = 1; k <=5; k ++){
     if (!chosen[k]) {
       continue;
@@ -116,7 +138,10 @@ function findCounters(){
     for (i = 6; i <=10; i ++) {
       for (j = 0; j < 8; j ++){
         if(chosen[i] == parseInt(nameToIDData[counters[chosen[k]][j][0]])){
-          counterID[chosen[k]].add(chosen[i]);
+          if (!counterList[k]) {
+            counterList[k] = [];
+          }
+          counterList[k].push(chosen[i]);
         }
       }
     }
@@ -193,17 +218,27 @@ function readPicks() {
     });
 
     findCounters();
-    var cHTML = "";
+    var cHTML = '';
     for (i = 1; i <= 5; i++){
-      if (counterID[chosen[i]] && counterID[chosen[i]].size > 0) {
+      cHTML = '<img src="resources/warning2.png" id="counter" alt="counter" class="image" />';
+      
+      if (counterList[i] && counterList[i].length > 0) {
         cHTML += '<div class="mouse popup"></div>';
         $("#warning"+i).css('visibility', 'visible');
       } else {
         $("#warning"+i).css('visibility', 'hidden');
       }
-      $("#warning"+i).find('.overlay').html(cHTML);
-      if (counterID[chosen[i]] && counterID[chosen[i]].size > 0) {
-       cHTML = '<div class="information">' + counterID[chosen[i]] + "</div>";
+      $("#warning"+i).html(cHTML);
+      if (counterList[i] && counterList[i].length > 0) {
+        //console.log(chosen, counterID);
+        var champImages = "";
+        //console.log(counterList[i]);
+        $.each(counterList[i], function(i,c) {
+          var key = static.champion.id[c].key;
+          champImages+="<div class='champ-counter'>"+'<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/champion/'+key+'.png" />'+"</div>";
+        });
+       cHTML = '<div class="champion-counter-container"><div class="title">Countered By</div>' + champImages + "</div>";
+       //console.log(JSON.stringify(cHTML));
        $("#warning"+i).find('.popup').html(cHTML);
       }
     }
@@ -323,6 +358,7 @@ if (this.readyState == 4 && this.status === 404) {
           //console.log('Not in Champion Select');
           $('#patch-notes-container').removeClass('show-pregame');
           $('[id^=player]').css('visibility', 'hidden');
+          $('[id^=warning]').css('visibility', 'hidden');
           $('.toggle-button').hide();
     } else {
       $('#patch-notes-container').addClass('show-pregame');
@@ -344,6 +380,7 @@ if (this.readyState == 4 && this.status === 404) {
           //console.log('Not in Champion Select');
           $('#patch-notes-container').removeClass('show-pregame');
           $('[id^=player]').css('visibility', 'hidden');
+          $('[id^=warning]').css('visibility', 'hidden');
           $('.toggle-button').hide();
     }
   }
@@ -360,7 +397,7 @@ if (this.readyState == 4 && this.status === 404) {
 jQuery(document).ready(function($){
   //your code here
 
-setInterval(function(){ 
+globalInterval = setInterval(function(){ 
   readPicks(); 
   //console.log(chosen);
 }, 1000);
@@ -373,11 +410,11 @@ function onMouseMove ( event ) {
   let el = event.target
 
   if (el.classList.contains('mouse') || el.classList.contains('window-handle')) {
-    log(false, 'setIgnoreMouseEvents(false)')
+    //log(false, 'setIgnoreMouseEvents(false)')
     browserWindow.setIgnoreMouseEvents(false)
     // ^ manually calling this DOES work (previously thought it didn't)
   } else {
-    log(true, 'setIgnoreMouseEvents(true, {forward: true})')
+    //log(true, 'setIgnoreMouseEvents(true, {forward: true})')
     browserWindow.setIgnoreMouseEvents(true, {forward: true})
     // ^ this function stops forwarding after a refresh (CTRL+R)
   }

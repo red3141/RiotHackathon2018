@@ -14,12 +14,11 @@ html {
 }
 .popup {
   display: none;
-  background:rgba(0,0,0,0.8);
   padding: 5px;
   z-index: 1;
   color: white;
       /* display: none; */
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.9);
     padding: 5px;
     z-index: 80000;
     color: white;
@@ -31,6 +30,42 @@ html {
     flex-direction: column;
     flex: 1 1 auto;
     width: 100%;
+}
+
+[id^=warning]:hover .popup {
+  display: block;
+  background:none;
+}
+
+.champion-counter-container {
+      display: flex;
+    width: 200px;
+    flex: 1 1 auto;
+    height: 60px;
+    flex-direction: row;
+    background: rgba(0,0,0,0.9);
+    padding: 5px;
+    flex-direction: column;
+    border-radius:10px;
+}
+.champion-counter-container img {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+.champion-counter-container .title {
+  color: red;
+  font-weight: bold;
+  width: 100%;
+
+    color: red;
+    font-weight: bold;
+    text-align: left;
+    color:rgba(255, 0, 0, 0.85);
+}
+.champion-counter-container .champion-counter {
+display:inline-block;
 }
 .ability:hover .popup {
   display: flex;
