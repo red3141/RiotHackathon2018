@@ -132,14 +132,14 @@ function getPatchNotesForChampionIdAndAbility(championId, ability) {
 	if (ability == "baseStats") {
 		data = data["patches"];
 		if (data.length > 0) {
-			return [data[0].type, '<div class="name" style="color:' + getColorForChangeType(data[0].type) + '">' + data[0].version.toFixed(2) + getTextForChangeType(data[0].type) + '</div>' + '<div class="information">' + data[0].changes + '</div>'];
+			return [data[0].type, '<div class="name" style="color:' + getColorForChangeType(data[0].type) + '"><span class="patchheader"> Patch ' + data[0].version.toFixed(2) + getTextForChangeType(data[0].type) + '</span></div>' + '<div class="information">' + data[0].changes + '</div>'];
 		} else {
 			return ["none", ""];
 		}
 	} else {
 		data = data[ability]["patches"];
 		if (data.length > 0) {
-			return [data[0].type, '<br /><div class="name" style="color:' + getColorForChangeType(data[0].type) + '">' + data[0].version.toFixed(2) + getTextForChangeType(data[0].type) + '</div>' + '<div class="information">' + data[0].changes + '</div>'];
+			return [data[0].type, '<br /><div class="name" style="color:' + getColorForChangeType(data[0].type) + '"><span class="patchheader"> Patch ' + data[0].version.toFixed(2) + getTextForChangeType(data[0].type) + '</span></div>' + '<div class="information">' + data[0].changes + '</div>'];
 		} else {
 			return ["none", ""];
 		}
@@ -246,7 +246,7 @@ function readPicks() {
           pHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/passive/'+static.skills[key].P.image+'" style="border:3px solid ' + color + '">';
           pHTML += '<div class="mouse popup"></div>';
           $(player).siblings('.p').html(pHTML);
-          pHTML = '<div class="name">'+static.skills[key].P.name+'</div>';
+          pHTML = '<div class="name"><span class="keybind">Passive -</span> '+static.skills[key].P.name+'</div>';
           pHTML+= '<div class="information">'+static.skills[key].P.description+'</div>';
 		  if (pPatchNotes.length > 0) {
 			  pHTML += pPatchNotes;
@@ -262,7 +262,7 @@ function readPicks() {
           qHTML += '<div class="mouse popup"></div>';
           //playerQ.html(qHTML);
           $(player).siblings('.q').html(qHTML);
-          qHTML = '<div class="name">'+static.skills[key].Q.name+'</div>';
+          qHTML = '<div class="name"><span class="keybind">Q -</span> '+static.skills[key].Q.name+'</div>';
           qHTML+= '<div class="information">'+static.skills[key].Q.description+'</div>';
 		  if (qPatchNotes.length > 0) {
 			  qHTML += qPatchNotes;
@@ -278,7 +278,7 @@ function readPicks() {
           wHTML += '<div class="mouse popup"></div>';
           // playerW.html(wHTML);
           $(player).siblings('.w').html(wHTML);
-          wHTML = '<div class="name">'+static.skills[key].W.name+'</div>';
+          wHTML = '<div class="name"><span class="keybind">W -</span> '+static.skills[key].W.name+'</div>';
           wHTML+= '<div class="information">'+static.skills[key].W.description+'</div>';
 		  if (wPatchNotes.length > 0) {
 			  wHTML += wPatchNotes;
@@ -294,7 +294,7 @@ function readPicks() {
           eHTML += '<div class="mouse popup"></div>';
           // playerE.html(eHTML);
           $(player).siblings('.e').html(eHTML);
-          eHTML = '<div class="name">'+static.skills[key].E.name+'</div>';
+          eHTML = '<div class="name"><span class="keybind">E -</span> '+static.skills[key].E.name+'</div>';
           eHTML+= '<div class="information">'+static.skills[key].E.description+'</div>';
 		  if (ePatchNotes.length > 0) {
 			  eHTML += ePatchNotes;
@@ -310,7 +310,7 @@ function readPicks() {
           rHTML += '<div class="mouse popup"></div>';
           // playerR.html(rHTML);
           $(player).siblings('.r').html(rHTML);
-          rHTML = '<div class="name">'+static.skills[key].R.name+'</div>';
+          rHTML = '<div class="name"><span class="keybind">R -</span> '+static.skills[key].R.name+'</div>';
           rHTML+= '<div class="information">'+static.skills[key].R.description+'</div>';
 		  if (rPatchNotes.length > 0) {
 			  rHTML += rPatchNotes;
