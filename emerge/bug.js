@@ -201,6 +201,11 @@ function readPicks() {
       } else {
         $("#warning"+i).css('visibility', 'hidden');
       }
+      $("#warning"+i).find('.overlay').html(cHTML);
+      if (counterID[chosen[i]] && counterID[chosen[i]].size > 0) {
+       cHTML = '<div class="information">' + counterID[chosen[i]] + "</div>";
+       $("#warning"+i).find('.popup').html(cHTML);
+      }
     }
 
 //    Object.keys(chosen).forEach(function(key) {
@@ -226,10 +231,10 @@ function readPicks() {
 		  }
 		  
           //player.innerHTML = pHTML;
-          $(player).html(pHTML);
+      $(player).html(pHTML);
 		  if (baseStatsPatchNotes.length > 0) {
-			pHTML = baseStatsPatchNotes;
-			$(player).find('.popup').html(pHTML);
+			 pHTML = baseStatsPatchNotes;
+			 $(player).find('.popup').html(pHTML);
 		  }
 
           //var playerP = document.getElementById('player'+i+'p');
