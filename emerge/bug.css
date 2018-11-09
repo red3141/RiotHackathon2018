@@ -81,7 +81,7 @@ body {
 }
 .individual .container {
   position: absolute;
-  background:red;
+  /*background:red;*/
 
     top: 7px;
 }
@@ -101,7 +101,7 @@ body {
 .p img,.q img,.w img,.e img,.r img {
   width: 20px;
 height: 20px;
-background: red;
+/*background: red;*/
 }
 
 div[id^player] {
@@ -110,12 +110,13 @@ div[id^player] {
 .ability {
       width: 20px;
     height: 20px;
-    background: red;
+    /*background: red;*/
     margin: 0 4px;
 }
 .ability > img {
   width: 20px;
   height: 20px;
+  margin-top: -5px;
 }
 .them .b {
   margin-right: 10px;
@@ -145,6 +146,15 @@ div[id^player] img {
   padding: 4px 50px;
   border-radius: 999em;
   border: 1px solid #ffffff3b;
+}
+.window-handle {
+  background: none;
+}
+.window-handle:after {
+  background: red;
+}
+body {
+  border: none;
 }
 
 .square {
@@ -215,16 +225,16 @@ div[id^player] img {
       top: 128px;
 }
 .individual:nth-of-type(2) {
-      top: 206px;
+      top: 208px;
 }
 .individual:nth-of-type(3) {
-      top: 284px;
+      top: 288px;
 }
 .individual:nth-of-type(4) {
-      top: 362px;
+      top: 368px;
 }
 .individual:nth-of-type(5) {
-      top: 440;
+      top: 448px;
 }
 
 
@@ -232,16 +242,16 @@ div[id^player] img {
       top: 128px;
 }
 .individual:nth-of-type(7) {
-      top: 206px;
+      top: 208px;
 }
 .individual:nth-of-type(8) {
-      top: 284px;
+      top: 288px;
 }
 .individual:nth-of-type(9) {
-      top: 362px;
+      top: 368px;
 }
 .individual:nth-of-type(10) {
-      top: 440;
+      top: 448px;
 }
 
 .container {
