@@ -10,7 +10,7 @@
       "P": {
         "patches": [{
             "version": 8.19,
-            "changes": "<span class=\"attribute\">Bonus Attack Damage Ratio</span>B\n<span class=\"attribute-before\">0.2</span>\n<span class=\"change-indicator\">&#8658;</span>\n0.4\n",
+            "changes": "<span class=\"attribute\">Bonus Attack Damage Ratio</span>   \n<span class=\"attribute-before\">0.2</span>\n<span class=\"change-indicator\">&#8658;</span>\n0.4\n",
             "type": "buff"
           }]
       },
@@ -283,7 +283,7 @@
       "patches": [
         {
           "version": 8.22,
-          "changes": "<span class=\"attribute\">BASE ATTACK DAMAGE</span><\/span>\n 57<\/span>\n â‡’<\/span>\n 61<\/span>\n ",
+          "changes": "<span class=\"attribute\">BASE ATTACK DAMAGE</span><\/span>\n 57<\/span>\n <span class=\"change-indicator\">&#8658;</span><\/span>\n 61<\/span>\n ",
           "type": "buff"
         }
       ],
@@ -577,7 +577,7 @@
         "patches": [
           {
           "version": 8.21,
-          "changes": "<span class=\"attribute\">MOVEMENT SPEED</span><\/span> 325<\/span> â‡’<\/span> 330<\/span>",
+          "changes": "<span class=\"attribute\">MOVEMENT SPEED</span><\/span> 325<\/span> <span class=\"change-indicator\">&#8658;</span><\/span> 330<\/span>",
           "type": "buff"
         }
         ],
@@ -619,7 +619,7 @@
       "patches": [
         {
         "version": 8.21,
-        "changes": "<span class=\"attribute\">MOVEMENT SPEED</span><\/span> 340<\/span> â‡’<\/span> 335<\/span>",
+        "changes": "<span class=\"attribute\">MOVEMENT SPEED</span><\/span> 340<\/span> <span class=\"change-indicator\">&#8658;</span><\/span> 335<\/span>",
         "type": "buff"
         }
       ],
@@ -720,7 +720,7 @@
       "patches": [
         {
         "version": 8.21,
-        "changes": "<span class=\"attribute\">HEALTH</span><\/span> 562<\/span> â‡’<\/span> 510<\/span>",
+        "changes": "<span class=\"attribute\">HEALTH</span><\/span> 562<\/span> <span class=\"change-indicator\">&#8658;</span><\/span> 510<\/span>",
         "type": "nerf"
         }
       ],
@@ -749,7 +749,7 @@
       ],
       "patches": [{
             "version": 8.19,
-            "changes": "<span class=\"attribute\">HEALTH</span>\r\n<span class=\"attribute-before\">610</span>\r\n\u21d2\r\n540\r\n",
+            "changes": "<span class=\"attribute\">HEALTH</span>\r\n<span class=\"attribute-before\">610</span>\r\n<span class=\"change-indicator\">&#8658;</span>\r\n540\r\n",
             "type": "nerf"
           }],
       "P": {
@@ -781,7 +781,7 @@
       ],
       "patches": [{
             "version": 8.19,
-            "changes": "<span class=\"attribute\">MOVEMENT SPEED</span>\r\n<span class=\"attribute-before\">325</span>\r\n\u21d2\r\n330\r\n",
+            "changes": "<span class=\"attribute\">MOVEMENT SPEED</span>\r\n<span class=\"attribute-before\">325</span>\r\n<span class=\"change-indicator\">&#8658;</span>\r\n330\r\n",
             "type": "buff"
           }],
       "P": {
@@ -856,7 +856,7 @@
       "patches": [
         {
         "version": 8.21,
-        "changes": "<span class=\"attribute\">HEALTH</span><\/span> 613<\/span> â‡’<\/span> 573<\/span>",
+        "changes": "<span class=\"attribute\">HEALTH</span><\/span> 613<\/span> <span class=\"change-indicator\">&#8658;</span><\/span> 573<\/span>",
         "type": "nerf"
         }
       ],
@@ -1121,7 +1121,7 @@
       "patches": [
 {
             "version": 8.20,
-            "changes": "<span class=\"attribute\">BASE AD</span><\/span>\n 66<\/span>\n â‡’<\/span>\n 63<\/span>\n ",
+            "changes": "<span class=\"attribute\">BASE AD</span><\/span>\n 66<\/span>\n <span class=\"change-indicator\">&#8658;</span><\/span>\n 63<\/span>\n ",
             "type": "nerf"
           }
       ],
@@ -1151,7 +1151,7 @@
       "patches": [
 {
             "version": 8.20,
-            "changes": "<span class=\"attribute\">BASE HEALTH REGEN</span><\/span>\n 9 per 5 seconds<\/span>\n â‡’<\/span>\n 7.5 per 5 seconds<\/span>\n ",
+            "changes": "<span class=\"attribute\">BASE HEALTH REGEN</span><\/span>\n 9 per 5 seconds<\/span>\n <span class=\"change-indicator\">&#8658;</span><\/span>\n 7.5 per 5 seconds<\/span>\n ",
             "type": "nerf"
           }
       ],
