@@ -89,7 +89,7 @@ function getPatchNotesForChampionIdAndAbility(championId, ability) {
 	if (ability == "baseStats") {
 		data = data["patches"];
 		if (data.length > 0) {
-			return [data[0].type, '<br /><div class="name">' + data[0].version + '</div>' + '<div class="information">' + data[0].changes + '</div>'];
+			return [data[0].type, '<div class="name">' + data[0].version + '</div>' + '<div class="information">' + data[0].changes + '</div>'];
 		} else {
 			return ["none", ""];
 		}
@@ -146,7 +146,13 @@ function readPicks() {
 		  baseStatsPatchNotes = baseStatsPatchNotes[1];
 		  var color = getColorForChangeType(changeType);
           var pHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/champion/'+key+'.png" style="border:3px solid ' + color + '">';
-
+          if (baseStatsPatchNotes.length > 0) {
+		    pHTML += '<div class="mouse popup"></div>';
+			$(player).css('visibility', 'visible');
+		  } else {
+			  $(player).css('visibility', 'hidden');
+		  }
+		  
           //player.innerHTML = pHTML;
           $(player).html(pHTML);
 		  if (baseStatsPatchNotes.length > 0) {
@@ -161,7 +167,7 @@ function readPicks() {
 		  pPatchNotes = pPatchNotes[1];
 		  color = getColorForChangeType(changeType);
           pHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/passive/'+static.skills[key].P.image+'" style="border:3px solid ' + color + '">';
-          pHTML += '<div class="mouse popup">Test Tooltip</div>';
+          pHTML += '<div class="mouse popup"></div>';
           $(player).siblings('.p').html(pHTML);
           pHTML = '<div class="name">'+static.skills[key].P.name+'</div>';
           pHTML+= '<div class="information">'+static.skills[key].P.description+'</div>';
@@ -176,7 +182,7 @@ function readPicks() {
 		  qPatchNotes = qPatchNotes[1];
 		  color = getColorForChangeType(changeType);
           qHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].Q.image+'" style="border:3px solid ' + color + '">';
-          qHTML += '<div class="mouse popup">Test Tooltip</div>';
+          qHTML += '<div class="mouse popup"></div>';
           //playerQ.html(qHTML);
           $(player).siblings('.q').html(qHTML);
           qHTML = '<div class="name">'+static.skills[key].Q.name+'</div>';
@@ -192,7 +198,7 @@ function readPicks() {
 		  wPatchNotes = wPatchNotes[1];
 		  color = getColorForChangeType(changeType);
           wHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].W.image+'" style="border:3px solid ' + color + '">';
-          wHTML += '<div class="mouse popup">Test Tooltip</div>';
+          wHTML += '<div class="mouse popup"></div>';
           // playerW.html(wHTML);
           $(player).siblings('.w').html(wHTML);
           wHTML = '<div class="name">'+static.skills[key].W.name+'</div>';
@@ -208,7 +214,7 @@ function readPicks() {
 		  ePatchNotes = ePatchNotes[1];
 		  color = getColorForChangeType(changeType);
           eHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].E.image+'" style="border:3px solid ' + color + '">';
-          eHTML += '<div class="mouse popup">Test Tooltip</div>';
+          eHTML += '<div class="mouse popup"></div>';
           // playerE.html(eHTML);
           $(player).siblings('.e').html(eHTML);
           eHTML = '<div class="name">'+static.skills[key].E.name+'</div>';
@@ -224,7 +230,7 @@ function readPicks() {
 		  rPatchNotes = rPatchNotes[1];
 		  color = getColorForChangeType(changeType);
           rHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].R.image+'" style="border:3px solid ' + color + '">';
-          rHTML += '<div class="mouse popup">Test Tooltip</div>';
+          rHTML += '<div class="mouse popup"></div>';
           // playerR.html(rHTML);
           $(player).siblings('.r').html(rHTML);
           rHTML = '<div class="name">'+static.skills[key].R.name+'</div>';
