@@ -40,7 +40,7 @@ html {
 }
 
 .champion-counter-container {
-      display: flex;
+      display: block;
     width: 200px;
     flex: 1 1 auto;
     height: 60px;
@@ -49,6 +49,7 @@ html {
     padding: 5px;
     flex-direction: column;
     border-radius:10px;
+    font-family: "Gill Sans W04", GillSans, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .champion-counter-container img {
   display: inline-block;
@@ -60,17 +61,28 @@ html {
   color: red;
   font-weight: bold;
   width: 100%;
-
+  font-family: "Gill Sans W04", GillSans, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
     color: red;
     font-weight: bold;
     text-align: left;
     color:rgba(255, 0, 0, 0.85);
 }
-.champion-counter-container .champion-counter {
-display:inline-block;
+.champion-counter-container .champ-counter {
+  display:inline-block !important;
+  width:30px !important;
+  font-family: "Gill Sans W04", GillSans, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .ability:hover .popup {
   display: flex;
+}
+.champ-counter.level1,.champ-counter.level2 {
+  border:solid 2px red;
+}
+.champ-counter.level3,.champ-counter.level4,.champ-counter.level5 {
+  border:solid 2px orange;
+}
+.champ-counter.level6,.champ-counter.level7,.champ-counter.level8 {
+  border:solid 2px yellow;
 }
 body {
   display: flex;

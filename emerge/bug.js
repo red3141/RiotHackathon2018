@@ -141,7 +141,7 @@ function findCounters(){
           if (!counterList[k]) {
             counterList[k] = [];
           }
-          counterList[k].push(chosen[i]);
+          counterList[k].push({'champ':chosen[i],'threatlevel':j.toString()});
         }
       }
     }
@@ -233,9 +233,23 @@ function readPicks() {
         //console.log(chosen, counterID);
         var champImages = "";
         //console.log(counterList[i]);
-        $.each(counterList[i], function(i,c) {
-          var key = static.champion.id[c].key;
-          champImages+="<div class='champ-counter'>"+'<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/champion/'+key+'.png" />'+"</div>";
+        $.each(counterList[i], function(index,c) {
+          console.log(arguments);
+          champ = c.champ;
+          threat = c['threatlevel'];
+          console.log('info',champ,threat);
+          var key = static.champion.id[champ].key;
+          var tooltip = "";
+          if (threat == 1 || threat == 2) {
+            tooltip = "is a hard counter!";
+          }
+          if (threat == 3 || threat == 4 || threat == 5) {
+            tooltip = "is a medium counter!";
+          }
+          if (threat == 6 || threat == 7 || threat == 8) {
+            tooltip = "is a lower counter!";
+          }
+          champImages+="<div class='champ-counter level"+threat+"' title='"+tooltip+"'>"+'<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/champion/'+key+'.png" />'+"</div>";
         });
        cHTML = '<div class="champion-counter-container"><div class="title">Countered By</div>' + champImages + "</div>";
        //console.log(JSON.stringify(cHTML));
