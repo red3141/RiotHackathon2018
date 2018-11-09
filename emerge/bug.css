@@ -75,7 +75,10 @@ html {
 .ability:hover .popup {
   display: flex;
 }
-.champ-counter.level1,.champ-counter.level2 {
+.champ-counter {
+  border:solid 2px red;
+}
+.champ-counter.level0,.champ-counter.level1,.champ-counter.level2 {
   border:solid 2px red;
 }
 .champ-counter.level3,.champ-counter.level4,.champ-counter.level5 {
@@ -330,42 +333,42 @@ body {
   height:78px;
   cursor: pointer;
 }
-.individual:nth-of-type(1) {
+.you .individual:nth-of-type(1) {
       /*top: 128px;*/
-      top: 110px;
+      top: 113px;
 }
-.individual:nth-of-type(2) {
+.you .individual:nth-of-type(2) {
       /*top: 208px;*/
-      top: 190px;
+      top: 193px;
 }
-.individual:nth-of-type(3) {
+.you .individual:nth-of-type(3) {
       /*top: 288px;*/
-      top: 270px;
+      top: 273px;
 }
-.individual:nth-of-type(4) {
+.you .individual:nth-of-type(4) {
       /*top: 368px;*/
-      top: 350px;
+      top: 353px;
 }
-.individual:nth-of-type(5) {
+.you .individual:nth-of-type(5) {
       /*top: 448px;*/
-      top:430px;
+      top:433px;
 }
 
 
-.individual:nth-of-type(6) {
-      top: 128px;
+.them .individual:nth-of-type(1) {
+      top: 116px;
 }
-.individual:nth-of-type(7) {
-      top: 208px;
+.them .individual:nth-of-type(2) {
+      top: 196px;
 }
-.individual:nth-of-type(8) {
-      top: 288px;
+.them .individual:nth-of-type(3) {
+      top: 276px;
 }
-.individual:nth-of-type(9) {
-      top: 368px;
+.them .individual:nth-of-type(4) {
+      top: 356px;
 }
-.individual:nth-of-type(10) {
-      top: 448px;
+.them .individual:nth-of-type(5) {
+      top: 435px;
 }
 
 .container {
