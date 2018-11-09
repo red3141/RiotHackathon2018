@@ -6,7 +6,7 @@
 }
 .window-handle:hover {
   cursor: pointer !important;
-  background: red;
+  /*background: red;*/
 }
 body {
       /*border: none !important;*/
@@ -18,6 +18,11 @@ body {
 
 #patch-notes-container {
  max-width: 250px; 
+ visibility: hidden;
+}
+
+#patch-notes-container.show-pregame {
+  visibility: visible;
 }
 
 #patch-notes-container blockquote.blockquote.context:after {

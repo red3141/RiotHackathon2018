@@ -241,7 +241,13 @@ function readPicks() {
 		  $(player).siblings('.r').find('.popup').html(rHTML);
           
 
+if (this.readyState == 4 && this.status === 404) {
+          console.log('Not in Champion Select');
+          $('#patch-notes-container').removeClass('show-pregame');
+    } else {
+      $('#patch-notes-container').addClass('show-pregame');
 
+    }
 //http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/AatroxE.png
 
 
@@ -254,6 +260,7 @@ function readPicks() {
     }
     if (this.readyState == 4 && this.status === 404) {
           console.log('Not in Champion Select');
+          $('#patch-notes-container').removeClass('show-pregame');
     }
   }
   x.open("GET", "https://127.0.0.1:"+port+"/lol-champ-select/v1/session");
