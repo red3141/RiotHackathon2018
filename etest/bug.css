@@ -26,3 +26,38 @@ body {
   border-radius: 999em;
   border: 1px solid #ffffff3b;
 }
+
+
+.container .popupRight {
+    opacity: 0;
+    background-color: black;
+    color: #fff;
+    border-radius: 6px;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 110%;
+	transition: .5s ease;
+}
+
+.container .popupLeft {
+	opacity: 0;
+    background-color: black;
+    color: #fff;
+    border-radius: 6px;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 110%;
+	transition: .5s ease;
+}
+
+.container:hover .popupRight {
+    opacity: 1;
+}
+
+.container:hover .popupLeft {
+    opacity: 1;
+}

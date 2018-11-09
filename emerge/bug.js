@@ -78,7 +78,7 @@ var static;
 var picks;
 var chosen = new Object();
 function readPicks() {
-  console.log(static);
+//  console.log(static);
 
   var x = new XMLHttpRequest();
   x.onreadystatechange = function() {
@@ -86,7 +86,7 @@ function readPicks() {
     picks = JSON.parse(x.response);
     Object.keys(picks.actions).forEach(function(x) {
       Object.keys(picks.actions[x]).forEach(function(y) {
-      console.log(x+' '+y+ ' '+picks.actions[x][y].type+' '+ picks.actions[x][y].championId);
+//      console.log(x+' '+y+ ' '+picks.actions[x][y].type+' '+ picks.actions[x][y].championId);
 //      var pid = key+1;
       if (picks.actions[x][y].type == 'pick') chosen[parseInt(picks.actions[x][y].actorCellId)+1] = picks.actions[x][y].championId;
       });
@@ -97,7 +97,38 @@ function readPicks() {
       if (typeof chosen[i] != 'undefined') {
         var id = chosen[i];
 //        console.log(i+' '+id);
-        if (id) player.innerHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/champion/'+static.champion.id[id].key+'.png" width="20" height="20">';
+        if (id) {
+          var key = static.champion.id[id].key;
+          //static.skills.Annie.P.image
+          var pHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/champion/'+key+'.png" width="20" height="20">';
+          pHTML += '<div class="mouse popupRight">Test Tooltip</div>';
+          player.innerHTML = pHTML;
+
+          var playerP = document.getElementById('player'+i+'p');
+          pHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/passive/'+static.skills[key].P.image+'" width="20" height="20">';
+          playerP.innerHTML = pHTML;
+
+          var playerQ = document.getElementById('player'+i+'q');
+          qHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].Q.image+'" width="20" height="20">';
+          playerQ.innerHTML = qHTML;
+
+          var playerW = document.getElementById('player'+i+'w');
+          wHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].W.image+'" width="20" height="20">';
+          playerW.innerHTML = wHTML;
+
+          var playerE = document.getElementById('player'+i+'e');
+          eHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].E.image+'" width="20" height="20">';
+          playerE.innerHTML = eHTML;
+
+          var playerR = document.getElementById('player'+i+'r');
+          rHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].R.image+'" width="20" height="20">';
+          playerR.innerHTML = rHTML;
+
+
+//http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/AatroxE.png
+
+
+        }
       } else {
         player.innerHTML = 'P'+i+' 404';
       }
@@ -110,8 +141,8 @@ function readPicks() {
   }
   x.open("GET", "https://127.0.0.1:"+port+"/lol-champ-select/v1/session");
   x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-   x.setRequestHeader("Authorization", "Basic " + btoa("riot:"+password));
-   x.setRequestHeader("Accept", "application/json");
+  x.setRequestHeader("Authorization", "Basic " + btoa("riot:"+password));
+  x.setRequestHeader("Accept", "application/json");
   /*
   x.open("POST", "http://app/pick.php?"+Math.random());
   x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); */

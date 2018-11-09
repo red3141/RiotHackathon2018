@@ -111,7 +111,7 @@ body {
 }
 
 .image {
-  
+
   display: block;
 }
 
@@ -129,13 +129,36 @@ body {
 }
 
 
+.container .popupRight {
+    opacity: 0;
+    background-color: black;
+    color: #fff;
+    border-radius: 6px;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 110%;
+	transition: .5s ease;
+}
 
-/*.text {
-  color: white;
-  font-size: 20px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-}*/
+.container .popupLeft {
+	opacity: 0;
+    background-color: black;
+    color: #fff;
+    border-radius: 6px;
+    padding: 5px 5px;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 110%;
+	transition: .5s ease;
+}
+
+.container:hover .popupRight {
+    opacity: 1;
+}
+
+.container:hover .popupLeft {
+    opacity: 1;
+}
