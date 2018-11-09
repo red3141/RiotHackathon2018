@@ -109,10 +109,14 @@ function findCounters(){
     if (!chosen[k]) {
       continue;
     }
+    if (!counterID[chosen[k]]) {
+      counterID[chosen[k]] = new Set();
+    }
+    
     for (i = 6; i <=10; i ++) {
       for (j = 0; j < 8; j ++){
         if(chosen[i] == parseInt(nameToIDData[counters[chosen[k]][j][0]])){
-          counterID[chosen[i]] = true; 
+          counterID[chosen[k]].add(chosen[i]);
         }
       }
     }
@@ -187,6 +191,18 @@ function readPicks() {
       if (picks.actions[x][y].type == 'pick') chosen[parseInt(picks.actions[x][y].actorCellId)+1] = picks.actions[x][y].championId;
       });
     });
+
+    findCounters();
+    var cHTML = "";
+    for (i = 1; i <= 5; i++){
+      if (counterID[chosen[i]] && counterID[chosen[i]].size > 0) {
+        cHTML += '<div class="mouse popup"></div>';
+        $("#warning"+i).css('visibility', 'visible');
+      } else {
+        $("#warning"+i).css('visibility', 'hidden');
+      }
+    }
+
 //    Object.keys(chosen).forEach(function(key) {
     for (var i=1; i<=10; i++) {
       var player = document.getElementById('player'+i);
@@ -295,7 +311,7 @@ function readPicks() {
 			  rHTML += rPatchNotes;
 		  }
 		  $(player).siblings('.r').find('.popup').html(rHTML);
-      findCounters();
+      
           
 
 if (this.readyState == 4 && this.status === 404) {
