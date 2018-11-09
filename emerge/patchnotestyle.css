@@ -113,13 +113,14 @@ body {
 
 #patch-notes-container .attribute-change{
     padding: 3px 0 3px 42px;
+    font-family: "Gill Sans W04",GillSans,"Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif;
 }
 
 #patch-notes-container .attribute{
     color: #777;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: .65em;
+    font-size: .85em;
 }
 
 #patch-notes-container .attribute:after {
