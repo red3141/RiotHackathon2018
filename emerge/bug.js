@@ -298,6 +298,7 @@ function readPicks() {
           //playerQ.html(qHTML);
           $(player).siblings('.q').html(qHTML);
           qHTML = '<div class="name"><span class="keybind">Q -</span> '+static.skills[key].Q.name+'</div>';
+          qHTML+= '<div class="information"><span class="cooldown">Cooldown: </span>'+static.skills[key].Q.cooldown+' seconds</div>';
           qHTML+= '<div class="information">'+static.skills[key].Q.description+'</div>';
 		  if (qPatchNotes.length > 0) {
 			  qHTML += qPatchNotes;
@@ -314,6 +315,7 @@ function readPicks() {
           // playerW.html(wHTML);
           $(player).siblings('.w').html(wHTML);
           wHTML = '<div class="name"><span class="keybind">W -</span> '+static.skills[key].W.name+'</div>';
+          wHTML+= '<div class="information"><span class="cooldown">Cooldown: </span>'+static.skills[key].W.cooldown+' seconds</div>';
           wHTML+= '<div class="information">'+static.skills[key].W.description+'</div>';
 		  if (wPatchNotes.length > 0) {
 			  wHTML += wPatchNotes;
@@ -330,6 +332,7 @@ function readPicks() {
           // playerE.html(eHTML);
           $(player).siblings('.e').html(eHTML);
           eHTML = '<div class="name"><span class="keybind">E -</span> '+static.skills[key].E.name+'</div>';
+          eHTML+= '<div class="information"><span class="cooldown">Cooldown: </span>'+static.skills[key].E.cooldown+' seconds</div>';
           eHTML+= '<div class="information">'+static.skills[key].E.description+'</div>';
 		  if (ePatchNotes.length > 0) {
 			  eHTML += ePatchNotes;
@@ -346,6 +349,7 @@ function readPicks() {
           // playerR.html(rHTML);
           $(player).siblings('.r').html(rHTML);
           rHTML = '<div class="name"><span class="keybind">R -</span> '+static.skills[key].R.name+'</div>';
+          rHTML+= '<div class="information"><span class="cooldown">Cooldown: </span>'+static.skills[key].R.cooldown+' seconds</div>';
           rHTML+= '<div class="information">'+static.skills[key].R.description+'</div>';
 		  if (rPatchNotes.length > 0) {
 			  rHTML += rPatchNotes;

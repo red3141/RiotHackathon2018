@@ -30,6 +30,8 @@ html {
     flex-direction: column;
     flex: 1 1 auto;
     width: 100%;
+    max-width: 500px;
+    width: 300%;
 }
 
 [id^=warning]:hover .popup {
@@ -103,6 +105,12 @@ body {
   font-family: "Calibri Light", "Gill Sans W04", GillSans, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 100;
   color: rgb(158, 158, 158);
+}
+.ability .information .cooldown {
+  color: #777;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .85em;
 }
 .name .patchheader {
   font-size: 0.85em;
