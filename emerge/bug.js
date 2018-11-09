@@ -146,7 +146,8 @@ function readPicks() {
 		  baseStatsPatchNotes = baseStatsPatchNotes[1];
 		  var color = getColorForChangeType(changeType);
           var pHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/champion/'+key+'.png" style="border:3px solid ' + color + '">';
-          if (baseStatsPatchNotes.length > 0) {
+      
+      if (baseStatsPatchNotes.length > 0) {
 		    pHTML += '<div class="mouse popup"></div>';
 			$(player).css('visibility', 'visible');
 		  } else {
@@ -244,6 +245,7 @@ function readPicks() {
 if (this.readyState == 4 && this.status === 404) {
           console.log('Not in Champion Select');
           $('#patch-notes-container').removeClass('show-pregame');
+          $('[id^=player]').css('visibility', 'hidden');
     } else {
       $('#patch-notes-container').addClass('show-pregame');
 
@@ -253,7 +255,8 @@ if (this.readyState == 4 && this.status === 404) {
 
         }
       } else {
-        player.innerHTML = 'P'+i+' 404';
+        // player.innerHTML = 'P'+i+' 404';
+        player.innerHTML = '';
       }
     }
     console.log(chosen);
@@ -261,6 +264,7 @@ if (this.readyState == 4 && this.status === 404) {
     if (this.readyState == 4 && this.status === 404) {
           console.log('Not in Champion Select');
           $('#patch-notes-container').removeClass('show-pregame');
+          $('[id^=player]').css('visibility', 'hidden');
     }
   }
   x.open("GET", "https://127.0.0.1:"+port+"/lol-champ-select/v1/session");
