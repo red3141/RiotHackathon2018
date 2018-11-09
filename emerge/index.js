@@ -10,10 +10,11 @@ app.on('certificate-error', (event, webContents, url, error, certificate, callba
 app.on('ready', ()=>{
   let browser = new BrowserWindow({
     width: 1280,
-    height: 750,
+    height: 850,
     transparent: true,
     frame: false,
-    alwaysOnTop: true
+    alwaysOnTop: true,
+    center: true
   })
 
   browser.loadFile(`${__dirname}/bug.htm`)

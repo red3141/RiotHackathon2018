@@ -31,8 +31,9 @@ var fs = require('fs');
 var port;
 var password;
 var lockfile;
-var filepath = "C:/Riot Games/League of Legends/lockfile";
+var filepath = "D:/League/lockfile";
 var championData;
+var nameToIDData;
 
 fs.readFile(filepath, 'utf-8', (err, data) => {
     if(err){
@@ -60,6 +61,11 @@ fs.readFile('./PatchesByChamp.json', 'utf-8', (err, data) => {
 	}
 });
 
+fs.readFile('./nameToId.json', 'utf-8', (err, data) => {
+  if (!err) {
+    nameToIDData = JSON.parse(data);
+  }
+});
 
 function processFile() {
     var res = lockfile.split(":");
@@ -80,6 +86,43 @@ var static;
   x.send();
 })();
 
+
+var counters;
+
+(function() {
+  var x = new XMLHttpRequest();
+  x.onreadystatechange = function() { if (this.readyState == 4 && this.status == 200) {
+      counters = JSON.parse(x.response);
+      counters = counters[0].counterlose; 
+      //console.log(counters);
+    }
+  }
+  x.open("POST", "http://builds.lol/hack/counters.json");
+  x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  x.send();
+})();
+
+var counterID = new Object();
+
+function findCounters(){
+  for (k = 1; k <=5; k ++){
+    if (!chosen[k]) {
+      continue;
+    }
+    if (!counterID[chosen[k]]) {
+      counterID[chosen[k]] = new Set();
+    }
+    
+    for (i = 6; i <=10; i ++) {
+      for (j = 0; j < 8; j ++){
+        if(chosen[i] == parseInt(nameToIDData[counters[chosen[k]][j][0]])){
+          counterID[chosen[k]].add(chosen[i]);
+        }
+      }
+    }
+  }
+}
+
 function getPatchNotesForChampionIdAndAbility(championId, ability) {
 	data = championData[championId];
 	if (!data) {
@@ -89,14 +132,14 @@ function getPatchNotesForChampionIdAndAbility(championId, ability) {
 	if (ability == "baseStats") {
 		data = data["patches"];
 		if (data.length > 0) {
-			return [data[0].type, '<br /><div class="name">' + data[0].version + '</div>' + '<div class="information">' + data[0].changes + '</div>'];
+			return [data[0].type, '<div class="name" style="color:' + getColorForChangeType(data[0].type) + '"><span class="patchheader"> Patch ' + data[0].version.toFixed(2) + getTextForChangeType(data[0].type) + '</span></div>' + '<div class="information">' + data[0].changes + '</div>'];
 		} else {
 			return ["none", ""];
 		}
 	} else {
 		data = data[ability]["patches"];
 		if (data.length > 0) {
-			return [data[0].type, '<br /><div class="name">' + data[0].version + '</div>' + '<div class="information">' + data[0].changes + '</div>'];
+			return [data[0].type, '<br /><div class="name" style="color:' + getColorForChangeType(data[0].type) + '"><span class="patchheader"> Patch ' + data[0].version.toFixed(2) + getTextForChangeType(data[0].type) + '</span></div>' + '<div class="information">' + data[0].changes + '</div>'];
 		} else {
 			return ["none", ""];
 		}
@@ -116,7 +159,23 @@ function getColorForChangeType(changeType) {
 	return "#282828";
 }
 
+function getTextForChangeType(changeType) {
+	if (changeType == "other") {
+		return " - Change";
+	}
+	if (changeType == "buff") {
+		return " - Buff";
+	}
+	if (changeType == "nerf") {
+		return " - Nerf";
+	}
+	return "";
+}
+
 var picks;
+//In a 5v5
+//0-4 player team
+//5-9 opponent team
 var chosen = new Object();
 function readPicks() {
 //  console.log(static);
@@ -132,6 +191,23 @@ function readPicks() {
       if (picks.actions[x][y].type == 'pick') chosen[parseInt(picks.actions[x][y].actorCellId)+1] = picks.actions[x][y].championId;
       });
     });
+
+    findCounters();
+    var cHTML = "";
+    for (i = 1; i <= 5; i++){
+      if (counterID[chosen[i]] && counterID[chosen[i]].size > 0) {
+        cHTML += '<div class="mouse popup"></div>';
+        $("#warning"+i).css('visibility', 'visible');
+      } else {
+        $("#warning"+i).css('visibility', 'hidden');
+      }
+      $("#warning"+i).find('.overlay').html(cHTML);
+      if (counterID[chosen[i]] && counterID[chosen[i]].size > 0) {
+       cHTML = '<div class="information">' + counterID[chosen[i]] + "</div>";
+       $("#warning"+i).find('.popup').html(cHTML);
+      }
+    }
+
 //    Object.keys(chosen).forEach(function(key) {
     for (var i=1; i<=10; i++) {
       var player = document.getElementById('player'+i);
@@ -146,12 +222,19 @@ function readPicks() {
 		  baseStatsPatchNotes = baseStatsPatchNotes[1];
 		  var color = getColorForChangeType(changeType);
           var pHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/champion/'+key+'.png" style="border:3px solid ' + color + '">';
-
+      
+      if (baseStatsPatchNotes.length > 0) {
+		    pHTML += '<div class="mouse popup"></div>';
+			$(player).css('visibility', 'visible');
+		  } else {
+			  $(player).css('visibility', 'hidden');
+		  }
+		  
           //player.innerHTML = pHTML;
-          $(player).html(pHTML);
+      $(player).html(pHTML);
 		  if (baseStatsPatchNotes.length > 0) {
-			pHTML = baseStatsPatchNotes;
-			$(player).find('.popup').html(pHTML);
+			 pHTML = baseStatsPatchNotes;
+			 $(player).find('.popup').html(pHTML);
 		  }
 
           //var playerP = document.getElementById('player'+i+'p');
@@ -161,9 +244,9 @@ function readPicks() {
 		  pPatchNotes = pPatchNotes[1];
 		  color = getColorForChangeType(changeType);
           pHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/passive/'+static.skills[key].P.image+'" style="border:3px solid ' + color + '">';
-          pHTML += '<div class="mouse popup">Test Tooltip</div>';
+          pHTML += '<div class="mouse popup"></div>';
           $(player).siblings('.p').html(pHTML);
-          pHTML = '<div class="name">'+static.skills[key].P.name+'</div>';
+          pHTML = '<div class="name"><span class="keybind">Passive -</span> '+static.skills[key].P.name+'</div>';
           pHTML+= '<div class="information">'+static.skills[key].P.description+'</div>';
 		  if (pPatchNotes.length > 0) {
 			  pHTML += pPatchNotes;
@@ -176,10 +259,11 @@ function readPicks() {
 		  qPatchNotes = qPatchNotes[1];
 		  color = getColorForChangeType(changeType);
           qHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].Q.image+'" style="border:3px solid ' + color + '">';
-          qHTML += '<div class="mouse popup">Test Tooltip</div>';
+          qHTML += '<div class="mouse popup"></div>';
           //playerQ.html(qHTML);
           $(player).siblings('.q').html(qHTML);
-          qHTML = '<div class="name">'+static.skills[key].Q.name+'</div>';
+          qHTML = '<div class="name"><span class="keybind">Q -</span> '+static.skills[key].Q.name+'</div>';
+          qHTML+= '<div class="information"><span class="cooldown">Cooldown: </span>'+static.skills[key].Q.cooldown+' seconds</div>';
           qHTML+= '<div class="information">'+static.skills[key].Q.description+'</div>';
 		  if (qPatchNotes.length > 0) {
 			  qHTML += qPatchNotes;
@@ -192,10 +276,11 @@ function readPicks() {
 		  wPatchNotes = wPatchNotes[1];
 		  color = getColorForChangeType(changeType);
           wHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].W.image+'" style="border:3px solid ' + color + '">';
-          wHTML += '<div class="mouse popup">Test Tooltip</div>';
+          wHTML += '<div class="mouse popup"></div>';
           // playerW.html(wHTML);
           $(player).siblings('.w').html(wHTML);
-          wHTML = '<div class="name">'+static.skills[key].W.name+'</div>';
+          wHTML = '<div class="name"><span class="keybind">W -</span> '+static.skills[key].W.name+'</div>';
+          wHTML+= '<div class="information"><span class="cooldown">Cooldown: </span>'+static.skills[key].W.cooldown+' seconds</div>';
           wHTML+= '<div class="information">'+static.skills[key].W.description+'</div>';
 		  if (wPatchNotes.length > 0) {
 			  wHTML += wPatchNotes;
@@ -208,10 +293,11 @@ function readPicks() {
 		  ePatchNotes = ePatchNotes[1];
 		  color = getColorForChangeType(changeType);
           eHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].E.image+'" style="border:3px solid ' + color + '">';
-          eHTML += '<div class="mouse popup">Test Tooltip</div>';
+          eHTML += '<div class="mouse popup"></div>';
           // playerE.html(eHTML);
           $(player).siblings('.e').html(eHTML);
-          eHTML = '<div class="name">'+static.skills[key].E.name+'</div>';
+          eHTML = '<div class="name"><span class="keybind">E -</span> '+static.skills[key].E.name+'</div>';
+          eHTML+= '<div class="information"><span class="cooldown">Cooldown: </span>'+static.skills[key].E.cooldown+' seconds</div>';
           eHTML+= '<div class="information">'+static.skills[key].E.description+'</div>';
 		  if (ePatchNotes.length > 0) {
 			  eHTML += ePatchNotes;
@@ -224,30 +310,45 @@ function readPicks() {
 		  rPatchNotes = rPatchNotes[1];
 		  color = getColorForChangeType(changeType);
           rHTML = '<img src="http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/'+static.skills[key].R.image+'" style="border:3px solid ' + color + '">';
-          rHTML += '<div class="mouse popup">Test Tooltip</div>';
+          rHTML += '<div class="mouse popup"></div>';
           // playerR.html(rHTML);
           $(player).siblings('.r').html(rHTML);
-          rHTML = '<div class="name">'+static.skills[key].R.name+'</div>';
+          rHTML = '<div class="name"><span class="keybind">R -</span> '+static.skills[key].R.name+'</div>';
+          rHTML+= '<div class="information"><span class="cooldown">Cooldown: </span>'+static.skills[key].R.cooldown+' seconds</div>';
           rHTML+= '<div class="information">'+static.skills[key].R.description+'</div>';
 		  if (rPatchNotes.length > 0) {
 			  rHTML += rPatchNotes;
 		  }
 		  $(player).siblings('.r').find('.popup').html(rHTML);
+      
           
 
+if (this.readyState == 4 && this.status === 404) {
+          //console.log('Not in Champion Select');
+          $('#patch-notes-container').removeClass('show-pregame');
+          $('[id^=player]').css('visibility', 'hidden');
+          $('.toggle-button').hide();
+    } else {
+      $('#patch-notes-container').addClass('show-pregame');
+      $('.toggle-button').show();
 
+    }
 //http://ddragon.leagueoflegends.com/cdn/8.22.1/img/spell/AatroxE.png
 
 
         }
       } else {
-        player.innerHTML = 'P'+i+' 404';
+        // player.innerHTML = 'P'+i+' 404';
+        player.innerHTML = '';
       }
     }
-    console.log(chosen);
+    //console.log(chosen);
     }
     if (this.readyState == 4 && this.status === 404) {
-          console.log('Not in Champion Select');
+          //console.log('Not in Champion Select');
+          $('#patch-notes-container').removeClass('show-pregame');
+          $('[id^=player]').css('visibility', 'hidden');
+          $('.toggle-button').hide();
     }
   }
   x.open("GET", "https://127.0.0.1:"+port+"/lol-champ-select/v1/session");
@@ -265,7 +366,7 @@ jQuery(document).ready(function($){
 
 setInterval(function(){ 
   readPicks(); 
-  console.log(chosen);
+  //console.log(chosen);
 }, 1000);
 
 });
@@ -292,7 +393,20 @@ window.addEventListener(
   event => window.removeEventListener('mousemove', onMouseMove)
 )
 
-/////////////////////////////////////////////////////////////////////////////////
+window.addEventListener('click', onToggleClicked)
+window.addEventListener(
+  'beforeunload',
+  event => window.removeEventListener('click', onToggleClicked)
+)
+
+function onToggleClicked ( event ) {
+  let el = event.target
+  if (el.classList.contains('toggle-button')) {
+      //console.log('clicked');
+    $('#toggle-container').toggle();
+  } else {
+  }
+}//////////////////////////////////////////////////////////////////////////
 
 // Logging with visual feedback
 // - does not affect functionality or bug

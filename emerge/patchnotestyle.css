@@ -6,7 +6,7 @@
 }
 .window-handle:hover {
   cursor: pointer !important;
-  background: red;
+  /*background: red;*/
 }
 body {
       /*border: none !important;*/
@@ -18,7 +18,18 @@ body {
 
 #patch-notes-container {
  max-width: 250px; 
+ visibility: hidden !important;
 }
+
+#patch-notes-container.show-pregame {
+  visibility: visible !important;
+}
+/*#patch-notes-container .ability {
+ visibility: hidden;
+}
+#patch-notes-container.show-pregame .ability {
+ visibility: visible;
+}*/
 
 #patch-notes-container blockquote.blockquote.context:after {
     margin-left: 0;
@@ -102,13 +113,14 @@ body {
 
 #patch-notes-container .attribute-change{
     padding: 3px 0 3px 42px;
+    font-family: "Gill Sans W04",GillSans,"Gill Sans","Gill Sans MT",Calibri,"Trebuchet MS",sans-serif;
 }
 
 #patch-notes-container .attribute{
     color: #777;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-size: .65em;
+    font-size: .85em;
 }
 
 #patch-notes-container .attribute:after {
@@ -300,7 +312,6 @@ body {
 #patch-notes-container ul.patch-list-champ {
     margin-left:20px;
 }
-
 #patch-notes-container div.attribute-change {
     padding:0px 0px;
 }
