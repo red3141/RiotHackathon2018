@@ -203,9 +203,9 @@ body {
 }
 
 #patch-notes-container img{
-    height: 32px;
+/*    height: 32px;
     width: auto;
-    padding-right: 10px;
+    padding-right: 10px;*/
 }
 
 #patch-notes-container .divider{
