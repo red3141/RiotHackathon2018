@@ -110,7 +110,7 @@ body {
         
 }
 .container {
-  visibility: hidden;
+  /*visibility: hidden;*/
   /*position:absolute; bottom: 0px; left:20px; width: 60px; height: 60px;*/
 }
 .individual .container {
