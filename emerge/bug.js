@@ -80,6 +80,22 @@ var static;
   x.send();
 })();
 
+
+var counters;
+
+(function() {
+  var x = new XMLHttpRequest();
+  x.onreadystatechange = function() { if (this.readyState == 4 && this.status == 200) {
+      counters = JSON.parse(x.response);
+      counters = counters[0].counterlose; 
+      console.log(counters);
+    }
+  }
+  x.open("POST", "http://builds.lol/hack/counters.json");
+  x.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  x.send();
+})();
+
 function getPatchNotesForChampionIdAndAbility(championId, ability) {
 	data = championData[championId];
 	if (!data) {
