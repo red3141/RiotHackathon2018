@@ -141,7 +141,7 @@
         "patches": [
           {
             "version": 8.22,
-            "changes": "<span class=\"attribute\">DISCHARGE BASE DAMAGE</span>\n          <span class=\"attribute-before\">20/50/80/110/140</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">20/45/70/95/120</span>\n        <span class=\"attribute\">DISCHARGE RATIO</span>\n         <br /> <span class=\"attribute-before\">1.0 total attack damage + 0.5 ability power</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">1.0 total attack damage + 0.55 ability power</span>\n        ",
+            "changes": "<span class=\"attribute\">DISCHARGE BASE DAMAGE</span>\n          <span class=\"attribute-before\">20/50/80/110/140</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">20/45/70/95/120</span>\n       <br /> <span class=\"attribute\">DISCHARGE RATIO</span>\n         <br /> <span class=\"attribute-before\">1.0 total attack damage + 0.5 ability power</span>\n          <span class=\"change-indicator\">&#8658;</span>\n          <span class=\"attribute-after\">1.0 total attack damage + 0.55 ability power</span>\n        ",
             "type": "other"
           }
         ]
