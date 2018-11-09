@@ -13,7 +13,8 @@ app.on('ready', ()=>{
     height: 750,
     transparent: true,
     frame: false,
-    alwaysOnTop: true
+    alwaysOnTop: true,
+    center: true
   })
 
   browser.loadFile(`${__dirname}/bug.htm`)
