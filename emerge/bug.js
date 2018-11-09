@@ -89,14 +89,14 @@ function getPatchNotesForChampionIdAndAbility(championId, ability) {
 	if (ability == "baseStats") {
 		data = data["patches"];
 		if (data.length > 0) {
-			return [data[0].type, '<div class="name">' + data[0].version + '</div>' + '<div class="information">' + data[0].changes + '</div>'];
+			return [data[0].type, '<div class="name">' + data[0].version.toFixed(2) + '</div>' + '<div class="information">' + data[0].changes + '</div>'];
 		} else {
 			return ["none", ""];
 		}
 	} else {
 		data = data[ability]["patches"];
 		if (data.length > 0) {
-			return [data[0].type, '<br /><div class="name">' + data[0].version + '</div>' + '<div class="information">' + data[0].changes + '</div>'];
+			return [data[0].type, '<br /><div class="name">' + data[0].version.toFixed(2) + '</div>' + '<div class="information">' + data[0].changes + '</div>'];
 		} else {
 			return ["none", ""];
 		}

@@ -18,12 +18,18 @@ body {
 
 #patch-notes-container {
  max-width: 250px; 
- visibility: hidden;
+ visibility: hidden !important;
 }
 
 #patch-notes-container.show-pregame {
-  visibility: visible;
+  visibility: visible !important;
 }
+/*#patch-notes-container .ability {
+ visibility: hidden;
+}
+#patch-notes-container.show-pregame .ability {
+ visibility: visible;
+}*/
 
 #patch-notes-container blockquote.blockquote.context:after {
     margin-left: 0;

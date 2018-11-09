@@ -60,7 +60,6 @@ body {
   display: flex;
     flex-direction: row;
     align-items: flex-end;
-    /*border:solid 1px cyan;*/
 }
 .playerTeam .individual {
     width: 220px;
@@ -112,7 +111,7 @@ div[id^player] {
       width: 20px;
     height: 20px;
     /*background: red;*/
-    margin: 0 3px;
+    margin: 0 4px;
 }
 .ability > img {
   width: 20px;
