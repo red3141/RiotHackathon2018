@@ -49,10 +49,29 @@ body {
 .playerTeam {
   position: fixed; top:0px;
 }
+
+/*Cookies stylings*/
 .ability .name {
-  font-weight:bold;
-  color:limegreen;
+  /*font-weight:bold;*/
+  text-transform: uppercase;
+  font-family: "Gill Sans W04", GillSans, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: rgb(199, 199, 199);
 }
+.ability .name .keybind {
+  /*font-weight:bold;*/
+  text-transform: uppercase;
+  font-family: "Gill Sans W04", GillSans, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 0.85em;
+  color: #777;
+}
+.ability .information {
+  font-family: "Calibri Light", "Gill Sans W04", GillSans, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: 100;
+}
+.name .patchheader {
+  font-size: 0.85em;
+}
+
 #toggle-button {
     font-size: 12px;
     position: fixed;
@@ -110,7 +129,7 @@ body {
         
 }
 .container {
-  /*visibility: hidden;*/
+  visibility: hidden;
   /*position:absolute; bottom: 0px; left:20px; width: 60px; height: 60px;*/
 }
 .individual .container {
@@ -142,7 +161,7 @@ div[id^player] {
   position:absolute; bottom:0px; left:123px; width: 20px; height: 20px;
 }
 .ability {
-      width: 20px;
+    width: 20px;
     height: 20px;
     /*background: red;*/
     margin: 0 4px;
